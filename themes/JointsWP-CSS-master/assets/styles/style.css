@@ -1,0 +1,1053 @@
+/************************************************
+
+Stylesheet: Global Stylesheet
+
+*************************************************/
+
+@font-face {
+    font-family: 'DalaMoaRegular';
+    src: url('../fonts/DalaMoaRegular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'DalaMoaMedium';
+    src: url('../fonts/DalaMoaMedium.woff') format('woff');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+.page-title .vcard {
+    border: 0px;
+    padding: 0px;
+}
+
+.byline {
+    color: #999;
+}
+
+.entry-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.entry-content .alignleft,
+.entry-content img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left;
+}
+
+.entry-content .alignright,
+.entry-content img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right;
+}
+
+.entry-content .aligncenter,
+.entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+}
+
+.entry-content video,
+.entry-content object {
+    max-width: 100%;
+    height: auto;
+}
+
+.entry-content pre {
+    background: #eee;
+    border: 1px solid #cecece;
+    padding: 10px;
+}
+
+.wp-caption {
+    max-width: 100%;
+    background: #eee;
+    padding: 5px;
+}
+
+.wp-caption img {
+    max-width: 100%;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 0.85em;
+    margin: 4px 0 7px;
+    text-align: center;
+}
+
+.post-password-form input[type="submit"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #1779ba;
+    color: #fefefe;
+}
+
+[data-whatinput='mouse'] .post-password-form input[type="submit"] {
+    outline: 0;
+}
+
+.post-password-form input[type="submit"]:hover,
+.post-password-form input[type="submit"]:focus {
+    background-color: #14679e;
+    color: #fefefe;
+}
+
+
+/*********************
+IMAGE GALLERY STYLES
+*********************/
+
+.gallery {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.gallery::before,
+.gallery::after {
+    content: ' ';
+    display: table;
+}
+
+.gallery::after {
+    clear: both;
+}
+
+.gallery.gallery-columns-1>dl {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+}
+
+@media print,
+screen and (min-width: 40em) {
+    .gallery.gallery-columns-1>dl {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+.gallery.gallery-columns-1>dl:last-child:not(:first-child) {
+    float: right;
+}
+
+.gallery.gallery-columns-2>dl {
+    width: 50%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+}
+
+@media print,
+screen and (min-width: 40em) {
+    .gallery.gallery-columns-2>dl {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+.gallery.gallery-columns-2>dl:last-child:not(:first-child) {
+    float: right;
+}
+
+.gallery.gallery-columns-3>dl {
+    width: 33.33333%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+}
+
+@media print,
+screen and (min-width: 40em) {
+    .gallery.gallery-columns-3>dl {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+.gallery.gallery-columns-3>dl:last-child:not(:first-child) {
+    float: right;
+}
+
+.gallery.gallery-columns-4>dl {
+    width: 25%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+}
+
+@media print,
+screen and (min-width: 40em) {
+    .gallery.gallery-columns-4>dl {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+.gallery.gallery-columns-4>dl:last-child:not(:first-child) {
+    float: right;
+}
+
+.gallery.gallery-columns-5>dl {
+    width: 20%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+}
+
+@media print,
+screen and (min-width: 40em) {
+    .gallery.gallery-columns-5>dl {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+.gallery.gallery-columns-5>dl:last-child:not(:first-child) {
+    float: right;
+}
+
+.gallery.gallery-columns-6>dl {
+    width: 16.66667%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+}
+
+@media print,
+screen and (min-width: 40em) {
+    .gallery.gallery-columns-6>dl {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+.gallery.gallery-columns-6>dl:last-child:not(:first-child) {
+    float: right;
+}
+
+.gallery.gallery-columns-7>dl {
+    width: 14.28571%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+}
+
+@media print,
+screen and (min-width: 40em) {
+    .gallery.gallery-columns-7>dl {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+.gallery.gallery-columns-7>dl:last-child:not(:first-child) {
+    float: right;
+}
+
+.gallery.gallery-columns-8>dl {
+    width: 12.5%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+}
+
+@media print,
+screen and (min-width: 40em) {
+    .gallery.gallery-columns-8>dl {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+.gallery.gallery-columns-8>dl:last-child:not(:first-child) {
+    float: right;
+}
+
+.gallery dl {
+    width: 100%;
+    float: left;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+}
+
+.gallery dl:last-child:not(:first-child) {
+    float: right;
+}
+
+
+/*********************
+PAGE NAVI STYLES
+*********************/
+
+.page-navigation {
+    margin-top: 1rem;
+}
+
+.top-bar-container {
+    padding: 0 20px;
+    position: relative;
+}
+
+.top-bar,
+.top-bar ul {
+    background-color: #fff;
+}
+
+.top-bar a {
+    text-transform: uppercase;
+    padding: 0;
+    background-color: transparent;
+    color: #2d2a26;
+    letter-spacing: 0.025em;
+    transition: color 300ms;
+    font-size: 15px;
+}
+
+.top-bar .menu.secondary-menu a {
+    text-transform: none;
+    font-size: 14px;
+    color: #e63c2e;
+    display: flex;
+    align-items: center;
+    min-height: 23px;
+    margin-left: 14px;
+}
+
+.top-bar a:hover {
+    color: #e63c2e;
+}
+
+.dropdown.menu a {
+    padding: 0 15px;
+}
+
+.top-bar {
+    height: 158px;
+    padding: 0 0 40px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.top-bar .menu .active>a {
+    color: #e63c2e;
+    background-color: transparent;
+    background: transparent;
+}
+
+.menu.submenu a {
+    padding: 15px;
+}
+
+.top-bar-right.top-bar-abs {
+    position: absolute;
+    right: 20px;
+    top: 53px;
+}
+
+.top-bar-right.menu-wrapper {
+    margin-right: -15px;
+}
+
+.top-bar .icon-bag {
+    font-size: 23px;
+    margin-left: 14px;
+}
+
+.menu-logo {
+    width: 98px;
+    height: 59px;
+}
+
+/*********************
+COMMENT STYLES
+*********************/
+
+#comments .commentlist {
+    margin-left: 0px;
+}
+
+#respond ul {
+    margin-left: 0px;
+}
+
+.commentlist li {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    list-style-type: none;
+    margin-bottom: 1.5em;
+    padding: 0.7335em 10px;
+}
+
+.commentlist li:last-child {
+    margin-bottom: 0;
+}
+
+.commentlist li ul.children {
+    margin: 0;
+}
+
+.commentlist li[class*=depth-] {
+    margin-top: 1.1em;
+}
+
+.commentlist li.depth-1 {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.commentlist li:not(.depth-1) {
+    margin-left: 10px;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.commentlist .vcard {
+    margin-left: 50px;
+}
+
+.commentlist .vcard cite.fn {
+    font-weight: 700;
+    font-style: normal;
+}
+
+.commentlist .vcard time {
+    float: right;
+}
+
+.commentlist .vcard time a {
+    color: #999;
+    text-decoration: none;
+}
+
+.commentlist .vcard time a:hover {
+    text-decoration: underline;
+}
+
+.commentlist .vcard img.avatar {
+    position: absolute;
+    left: 10px;
+    padding: 2px;
+    border: 1px solid #cecece;
+    background: #fff;
+}
+
+.commentlist .comment_content p {
+    margin: 0.7335em 0 1.5em;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.commentlist .comment-reply-link {
+    float: right;
+}
+
+
+/*********************
+COMMENT FORM STYLES
+*********************/
+
+.respond-form {
+    margin: 1.5em 10px;
+    padding-bottom: 2.2em;
+}
+
+.respond-form form {
+    margin: 0.75em 0;
+}
+
+.respond-form form li {
+    list-style-type: none;
+    clear: both;
+    margin-bottom: 0.7335em;
+}
+
+.respond-form form li label,
+.respond-form form li small {
+    display: none;
+}
+
+.respond-form form input[type=text],
+.respond-form form input[type=email],
+.respond-form form input[type=url],
+.respond-form form textarea {
+    padding: 3px 6px;
+    background: #efefef;
+    border: 2px solid #cecece;
+    line-height: 1.5em;
+}
+
+.respond-form form input[type=text]:focus,
+.respond-form form input[type=email]:focus,
+.respond-form form input[type=url]:focus,
+.respond-form form textarea:focus {
+    background: #fff;
+}
+
+.respond-form form input[type=text]:invalid,
+.respond-form form input[type=email]:invalid,
+.respond-form form input[type=url]:invalid,
+.respond-form form textarea:invalid {
+    outline: none;
+    border-color: #fbc2c4;
+    background-color: #f6e7eb;
+    -ms-box-shadow: none;
+    box-shadow: none;
+}
+
+.respond-form form input[type=text],
+.respond-form form input[type=email],
+.respond-form form input[type=url] {
+    max-width: 400px;
+    min-width: 250px;
+}
+
+.respond-form form textarea {
+    resize: none;
+    width: 97.3%;
+    height: 150px;
+}
+
+#comment-form-title {
+    margin: 0 0 1.1em;
+}
+
+#allowed_tags {
+    margin: 1.5em 10px 0.7335em 0;
+}
+
+.nocomments {
+    margin: 0 20px 1.1em;
+}
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar li {
+    list-style: none;
+}
+
+.widget ul {
+    margin: 0;
+}
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+    clear: both;
+    margin-top: 1em;
+}
+
+
+/*********************
+VISUAL EDITOR STYLES
+*********************/
+
+body#tinymce {
+    margin: 20px;
+}
+
+
+/*********************
+PLUGIN STYLES
+*********************/
+
+.gform_body ul {
+    list-style: none outside none;
+    margin: 0;
+}
+
+
+/*# sourceMappingURL=style.css.map */
+
+
+/***************************************************
+****************************************************
+				BEGIN CUSTOM STYLES
+****************************************************
+***************************************************/
+
+
+/****************** Global Styles ********************/
+
+a[x-apple-data-detectors],
+a[href^="tel"] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+h1 {
+    font-family: 'DalaMoaRegular', Georgia, serif;
+    font-size: 5.625rem;
+}
+
+h2 {
+    font-family: Lato, Arial, sans-serif;
+    font-size: 1.75rem;
+    color: #e63c2e;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+h3 {
+    font-family: Lato, Arial, sans-serif;
+    font-size: 1.875rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+h4 {
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 700;
+}
+
+h5 {
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 400;
+}
+
+a {
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 400;
+}
+
+a:hover {
+    color: #b0b0b0;
+}
+
+p {
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #231f20;
+}
+
+.background-image {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page-title {
+    color: #e63c2f;
+    font-size: 5.625rem;
+    padding: 3.125rem 0;
+}
+
+.gray-line {
+    border-bottom: 1px solid #dadada;
+}
+
+.outline-button {
+    border: 1px solid;
+    padding: .625rem 4.688rem;
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.063rem;
+    background-color: none;
+}
+
+.relative {
+    position: relative;
+}
+
+.gradient-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC42NSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* FF3.6-15 */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
+    /* Chrome4-9,Safari4-5 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* Opera 11.10-11.50 */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* IE10 preview */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+    /* IE6-8 */
+}
+
+
+/**************** Video Close Button ****************/
+
+.nivo-lightbox-theme-default .nivo-lightbox-close {
+    background: default !important;
+    background-size: 20px 20px !important;
+    width: 24px;
+    height: 24px;
+}
+
+.nivo-lightbox-close {
+    top: 7%;
+    right: 7%;
+    opacity: 1 !important;
+}
+
+
+/***************** Homepage *******************/
+
+.home-banner {
+    background-position: 75% 0%;
+}
+
+.home-banner-text {
+    padding: 10rem 0 6.875rem 0;
+    color: #ffffff;
+}
+
+.home-banner-text p {
+    color: #ffffff;
+}
+
+.home-headline-small {
+    font-size: 1.313rem;
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+}
+
+.home-headline-large {
+    font-size: 8.125rem;
+    line-height: 6.25rem;
+    padding-bottom: 3.125rem;
+}
+
+.home-banner-cta {
+    font-size: 1.438rem;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 1.25rem 4.375rem;
+}
+
+.home-featured-container {
+    padding: 3.438rem 0 6.25rem 0;
+}
+
+.home-featured-header {
+    font-size: 1.313rem;
+    padding-bottom: 2.75rem;
+}
+
+.home-featured-link-container {
+    padding: 1.125rem;
+}
+
+#home-slider .home-featured-item-container:nth-child(n+3) .home-featured-link-container {
+    background-color: #ffa409;
+}
+#home-slider .home-featured-item-container:nth-child(2n+3) .home-featured-link-container {
+    background-color: #e63c2e;
+}
+#home-slider .home-featured-item-container:nth-child(3n+3) .home-featured-link-container {
+    background-color: #1675a9;
+}
+
+.home-cta-container {
+    padding-top: 40rem;
+    background-position: center center;
+}
+
+a.home-cta {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #e63c2f;
+    padding: 1.438rem 4rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    font-family: Lato, Arial, sans-serif;
+    border: 3px solid #ffffff;
+}
+
+.home-quote-container {
+    background-position: left top;
+}
+
+.home-quote-text-container {
+    background: rgb(255, 255, 255, 0.75);
+    padding: 0 3.125rem 3.125rem 3.125rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.quote-text {
+    font-family: 'DalaMoaRegular', Georgia, serif;
+    font-size: 2.125rem;
+    line-height: 2.75rem;
+    color: #231F20;
+}
+
+.quote-author {
+    font-family: 'DalaMoaRegular', Georgia, serif;
+    font-size: 2.125rem;
+    line-height: 2.75rem;
+    color: #e63c2f;
+}
+
+
+/***************** In the Studio *******************/
+
+.studio-featured-video {
+    padding: 4rem 0;
+}
+
+.studio-related-videos-container {
+    background-color: #ebebec;
+    padding: 3.125rem 0;
+}
+
+.studio-related-video-link {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.studio-related-video-caption {
+    font-size: 1.125rem;
+    text-align: center;
+    padding-top: 1.125rem;
+    margin: 0;
+}
+
+.studio-progress-container {
+    padding: 5.625rem 0;
+}
+
+.studio-progress-header {
+    padding: 4.688rem 0 1.875rem 0;
+}
+
+.caption-wrap {
+    position: relative !important;
+    text-align: center;
+    background-color: transparent !important;
+    padding: 1rem 0;
+}
+
+.caption-wrap .caption {
+    color: #231f20;
+    font-size: 1.125rem;
+}
+
+.studio-visit-description {
+    padding-top: 1.125rem;
+}
+
+.studio-visit-cta {
+    background-color: #0076a9;
+    padding: 5rem 0;
+}
+
+.studio-visit-cta a {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.studio-visit-cta h3 {
+    font-family: 'DalaMoaRegular', Georgia, serif;
+    font-size: 5.625rem;
+    line-height: 5.25rem;
+    color: #ffffff;
+    padding-right: 5rem;
+    text-transform: none;
+}
+
+.studio-visit-cta p {
+    color: #ffffff;
+    font-size: 1.313rem;
+    line-height: 1.563rem;
+    padding-bottom: 1.875rem;
+}
+
+.studio-visit-button {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+
+/***************** Press & Events *******************/
+
+.news-featured-container {
+    padding-bottom: 3.438rem;
+}
+
+.news-featured-header {
+    padding: 3.438rem 0 2.75rem 0;
+}
+
+.news-featured-date {
+    font-size: 1.5rem;
+    color: #231f20;
+    font-weight: 700;
+    padding: 0;
+}
+
+.news-featured-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: none;
+    color: #231f20;
+    padding: 0;
+}
+
+.news-featured-excerpt {
+    font-size: 1.125rem;
+    line-height: 1.3125rem;
+    font-weight: 300;
+    color: #231f20;
+    padding-bottom: .5rem;
+}
+
+.news-archive-container {
+    padding-bottom: 3rem;
+}
+
+.news-archive-header {
+    padding: 3.438rem 0 2.75rem 0;
+}
+
+.news-archive-link {
+    font-size: 1.1875rem;
+    text-transform: uppercase;
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.news-archive-wrapper:first-child .news-archive-link,
+.news-archive-wrapper:nth-child(4) .news-archive-link {
+    color: #ffa409;
+}
+
+.news-archive-wrapper:nth-child(2) .news-archive-link,
+.news-archive-wrapper:nth-child(5) .news-archive-link {
+    color: #e63c2e;
+}
+
+.news-archive-wrapper:nth-child(3) .news-archive-link,
+.news-archive-wrapper:nth-child(6) .news-archive-link {
+    color: #1675a9;
+}
+
+.news-archive-title a {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+
+/*************** News Classes (shared between Homepage and Press & Events pages) ****************/
+
+.news-image {
+    width: 100%;
+    height: auto;
+}
+
+.news-link {
+    color: #ffffff;
+    font-size: 1.1875rem;
+    text-transform: uppercase;
+    padding: 1.375rem 1.875rem;
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.news-title {
+    position: absolute;
+    bottom: 1.875rem;
+    left: 1.875rem;
+    color: #ffffff;
+    font-size: 1.3125rem;
+    line-height: 1.5625rem;
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 700;
+    width: 75%;
+}
+
+.news-title h5 a {
+    color: #ffffff;
+}
+
+.news-title:hover {
+    color: #b0b0b0;
+}
+
+.news-link:hover {
+    color: #dadada;
+}
+
+
+/**************** Contact Form ******************/
+
+.reveal {
+    padding: 1.75rem 3rem 1.25rem 3rem;
+}
+
+.contact-header {
+    font-size: 1.4375rem;
+}
+
+.contact-form label {
+    font-family: Lato, Arial, sans-serif;
+    font-style: italic;
+    padding-bottom: 1rem;
+}
+
+.wpcf7-form-control {
+    border: none;
+    box-shadow: none;
+    background-color: #e6e7e8;
+    margin-bottom: 0;
+}
+
+.contact-form input[type="submit"] {
+    font-family: Lato, Arial, sans-serif;
+    color: #1675a9;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: 1px solid #1675a9;
+    padding: .625rem 4.688rem;
+    text-align: center;
+    display: block;
+    margin: 1.25rem auto 0 auto;
+}
