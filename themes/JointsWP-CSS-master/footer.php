@@ -13,24 +13,11 @@
 					<div class="grid-container">
 
 						<div id="footer-sidebar" class="footer-links secondary grid-x">
-							<div id="footer-sidebar1" class="footer-menu medium-2 large-2 cell">
-								<?php dynamic_sidebar('footer-sidebar-1'); ?>
-							</div>
-							<div id="footer-sidebar2" class="footer-menu medium-2 large-2 cell">
-								<?php dynamic_sidebar('footer-sidebar-2'); ?>
-							</div>
-							<div id="footer-sidebar3" class="footer-menu medium-2 large-2 cell">
-								<?php dynamic_sidebar('footer-sidebar-3'); ?>
-							</div>
-							<div id="footer-sidebar4" class="footer-menu medium-2 large-2 cell">
-								<?php dynamic_sidebar('footer-sidebar-4'); ?>
-							</div>
-							<div id="footer-sidebar5" class="footer-menu medium-2 large-2 cell">
-								<?php dynamic_sidebar('footer-sidebar-5'); ?>
-							</div>
-							<div id="footer-sidebar6" class="footer-menu medium-2 large-2 cell">
-								<?php dynamic_sidebar('footer-sidebar-6'); ?>
-							</div>
+							<?php for ($i = 1; $i <= 6 ; $i++): ?>
+								<div id="footer-sidebar<?php echo $i; ?>" class="footer-menu medium-2 large-2 cell">
+									<?php if (is_active_sidebar('footer-sidebar-' . $i)) { dynamic_sidebar('footer-sidebar-' . $i); } ?>
+								</div>
+							<?php endfor; ?>
 						</div>
 
 						<div class="inner-footer grid-x">

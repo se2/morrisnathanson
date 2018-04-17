@@ -214,17 +214,18 @@ function my_mce4_options($init) {
 }
 
 if ( function_exists('register_sidebar') ) {
-	register_sidebar();
-	register_sidebars(6,
-		array(
-			'name' 					=> 'Footer Sidebar %d',
-			'id' 						=> 'footer-sidebar-%d',
-			'description' 	=> 'Appears in the footer area',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' 	=> '</aside>',
-			'before_title' 	=> '<h3 class="footer-title">',
-			'after_title' 	=> '</h3>',
-		)
-	);
+	for ($i = 1; $i <=6 ; $i++) {
+		register_sidebar(
+			array(
+				'name' 					=> 'Footer Sidebar ' . $i,
+				'id' 						=> 'footer-sidebar-' . $i,
+				'description' 	=> 'Appears in the footer area',
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' 	=> '</aside>',
+				'before_title' 	=> '<h3 class="footer-title">',
+				'after_title' 	=> '</h3>',
+			)
+		);
+	}
 }
 
