@@ -37,6 +37,20 @@ get_header(); ?>
 						<div class="medium-7 cell">
 							<!-- Featured Post Image -->
 							<?php the_post_thumbnail('full'); ?>
+							<div class="share-links">
+								<a class="share-icon" href="http://www.facebook.com/sharer.php?u=<?php echo the_field('news_article_url'); ?>&amp;t=<?php the_title(); ?>" title="Share on Facebook." target="_blank">
+									<span class="icon icon-facebook"></span>
+								</a>
+								<!-- <a class="share-icon" href="http://www.facebook.com/sharer.php?u=<?php echo the_field('news_article_url'); ?>&amp;t=<?php the_title(); ?>" title="Share on Facebook." target="_blank">
+									<span class="icon icon-rss"></span>
+								</a> -->
+								<a class="share-icon" href="http://twitter.com/home/?status=<?php the_title(); ?> - <?php the_field('news_article_url'); ?>" title="Tweet this!" target="_blank">
+									<span class="icon icon-twitter"></span>
+								</a>
+								<a class="share-icon"href="https://plus.google.com/share?url=<?php the_field('news_article_url'); ?>" title="Share on Google Plus." target="_blank">
+									<span class="icon icon-googleplus"></span>
+								</a>
+							</div>
 						</div>
 
 						<div class="medium-5 cell">

@@ -626,6 +626,10 @@ FOOTER STYLES
     line-height: 26px;
 }
 
+.footer-menu .menu .active>a {
+    background: transparent;
+}
+
 .footer-links {
     margin-bottom: 140px;
 }
@@ -1022,6 +1026,11 @@ a.home-cta {
     font-weight: 700;
 }
 
+.news-archive-wrapper {
+    padding-top: .9375rem;
+    padding-bottom: .9375rem;
+}
+
 .news-archive-wrapper:first-child .news-archive-link,
 .news-archive-wrapper:nth-child(4) .news-archive-link {
     color: #ffa409;
@@ -1042,6 +1051,17 @@ a.home-cta {
     font-weight: 700;
 }
 
+a.share-icon {
+    font-size: 33px;
+}
+
+a.share-icon .icon:hover:before {
+    color: #e63c2e;
+}
+
+.share-links {
+    margin-top: 24px;
+}
 
 /*************** News Classes (shared between Homepage and Press & Events pages) ****************/
 
