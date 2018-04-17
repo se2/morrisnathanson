@@ -387,10 +387,7 @@ PAGE NAVI STYLES
 /* Home Slider */
 
 #home-slider .slick-slide {
-    margin: 0 20px;
-}
-#home-slider .slick-list {
-    margin: 0 -20px;
+    padding: 0 20px;
 }
 
 .slide-arrow {
@@ -598,9 +595,46 @@ FOOTER STYLES
 
 .footer {
     clear: both;
-    margin-top: 1em;
+    background: #e63c2e;
+    color: white;
+    padding: 85px 0;
 }
 
+.footer p {
+    color: white;
+}
+
+.footer-menu ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-menu a {
+    padding: 0;
+    color: white;
+    transition: color 300ms;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.footer-menu .sub-menu {
+    margin-top: 20px;
+}
+
+.footer-menu .sub-menu a {
+    text-transform: none;
+    line-height: 26px;
+}
+
+.footer-links {
+    margin-bottom: 140px;
+}
+
+.copyright {
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.025em;
+}
 
 /*********************
 VISUAL EDITOR STYLES
