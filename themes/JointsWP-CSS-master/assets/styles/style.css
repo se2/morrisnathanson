@@ -16,6 +16,13 @@ Stylesheet: Global Stylesheet
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+
+/* Global */
+
+.grid-container {
+    max-width: 1060px;
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -384,6 +391,10 @@ PAGE NAVI STYLES
     height: 59px;
 }
 
+header {
+    border-bottom: 1px solid #dadada;
+}
+
 /* Home Slider */
 
 #home-slider .slick-slide {
@@ -588,6 +599,34 @@ SIDEBARS & ASIDES
     margin: 0;
 }
 
+.page-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.page-sidebar {
+    background-color: #e63c2e;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-width: 272px;
+    height: 100%;
+    z-index: -999;
+    left: calc(1060px + ((100vw - 1060px) / 2) - (1060px / 6));
+}
+
+.terms-list {
+    list-style: none;
+    margin: 0;
+}
+
+.terms-list a {
+    transition: color 300ms;
+    color: white;
+    font-size: 21px;
+    letter-spacing: 0.025em;
+}
 
 /*********************
 FOOTER STYLES
@@ -1061,6 +1100,21 @@ a.share-icon .icon:hover:before {
 
 .share-links {
     margin-top: 24px;
+}
+
+/***************** Stories *******************/
+
+.story-title {
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.story-date {
+    font-size: 18px;
+    color: #e63c2e;
+    font-weight: 600;
+    margin-left: 20px;
 }
 
 /*************** News Classes (shared between Homepage and Press & Events pages) ****************/
