@@ -385,11 +385,35 @@ PAGE NAVI STYLES
 }
 
 /* Home Slider */
+
 #home-slider .slick-slide {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 #home-slider .slick-list {
-    margin: 0 -15px;
+    margin: 0 -20px;
+}
+
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.slide-next {
+    border-width: 15px 0 15px 26px;
+    border-color: transparent transparent transparent #e5e5e6;
+    right: -52px;
+}
+
+.slide-prev {
+    left: -52px;
+    border-width: 15px 26px 15px 0;
+    border-color: transparent #e5e5e6 transparent transparent;
 }
 
 /*********************
@@ -774,8 +798,10 @@ p {
 }
 
 .home-featured-header {
-    font-size: 1.313rem;
+    font-size: 21px;
     padding-bottom: 2.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
 }
 
 .home-featured-link-container {

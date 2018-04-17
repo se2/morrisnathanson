@@ -11,6 +11,9 @@ jQuery(document).ready(function () { // Remove empty P tags created by WP inside
         slidesToShow: 3,
         slidesToScroll: 3,
         arrows: true,
+        nextArrow: "<div class='slide-arrow slide-next'></div>",
+        prevArrow: "<div class='slide-arrow slide-prev'></div>",
+        speed: 900,
         responsive: [
             {
                 breakpoint: 769,
