@@ -10,7 +10,26 @@ jQuery(document).ready(function () { // Remove empty P tags created by WP inside
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 3,
-        arrows: true
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 481,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
     });
 });
 

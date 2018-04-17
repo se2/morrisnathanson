@@ -40,7 +40,8 @@ get_header(); ?>
 
 									<?php if( $post_object ): ?>
 
-										<?php $post = $post_object; setup_postdata( $post );
+										<?php
+											$post = $post_object; setup_postdata( $post );
 											$news_article_title = get_the_title($post_object->ID);
 											$news_article_url = get_field('news_article_url', $post_object ->ID);
 											$news_article_vertical_image = get_field('news_article_vertical_image', $post_object->ID);

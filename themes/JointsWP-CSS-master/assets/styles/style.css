@@ -384,6 +384,14 @@ PAGE NAVI STYLES
     height: 59px;
 }
 
+/* Home Slider */
+#home-slider .slick-slide {
+    margin: 0 15px;
+}
+#home-slider .slick-list {
+    margin: 0 -15px;
+}
+
 /*********************
 COMMENT STYLES
 *********************/
