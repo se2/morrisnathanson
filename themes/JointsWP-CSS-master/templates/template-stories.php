@@ -22,7 +22,9 @@ get_header(); ?>
 					<?php
 						$story_query = new WP_Query(
 							array(
-								'post_type' => 'story'
+								'post_type' => 'story',
+								'orderby' => 'post_date',
+								'order' => 'ASC'
 								)
 							);
 
@@ -77,8 +79,8 @@ get_header(); ?>
 							$terms = get_terms(
 								array(
 									'taxonomy' => 'story-category',
-									'order' => 'DESC',
-									'hide_empty' => false,
+									// 'hide_empty' => false,
+									'order' => 'DESC'
 							) );
 							foreach ($terms as $key => $term) : ?>
 							<li class="term-item">
