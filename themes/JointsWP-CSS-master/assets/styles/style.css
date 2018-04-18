@@ -1117,6 +1117,72 @@ a.share-icon .icon:hover:before {
     margin-left: 20px;
 }
 
+.post-content .content-column,
+.post-content p {
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-contain {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.story-item {
+    padding-bottom: 80px;
+    margin-bottom: 30px;
+}
+
+.story-map {
+    width: 60%;
+    height: 150px;
+}
+
+.story-info-section,
+.story-content-section {
+    margin-top: 40px;
+}
+
+.story-featured-img {
+    width: 100%;
+    height: 475px;
+}
+
+.story-cover-1 {
+    height: 375px;
+    margin-top: 40px;
+}
+
+.story-quote {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.story-quote .story-quote-author {
+    font-family: "Lato";
+    font-size: 18px;
+}
+
+.story-quote,
+.story-quote p {
+    font-family: "DalaMoaRegular";
+    font-size: 36px;
+    line-height: 40px;
+}
+
+.story-left-content {
+    padding-right: 8.333%;
+}
+
 /*************** News Classes (shared between Homepage and Press & Events pages) ****************/
 
 .news-image {
