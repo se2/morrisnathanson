@@ -1,29 +1,29 @@
 <?php
-	
+
 // Adding WP Functions & Theme Support
 function joints_theme_support() {
 
 	// Add WP Thumbnail Support
 	add_theme_support( 'post-thumbnails' );
-	
+
 	// Default thumbnail size
 	set_post_thumbnail_size(125, 125, true);
 
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );
-	
+
 	// Add Support for WP Controlled Title Tag
 	add_theme_support( 'title-tag' );
-	
+
 	// Add HTML5 Support
-	add_theme_support( 'html5', 
-	         array( 
-	         	'comment-list', 
-	         	'comment-form', 
-	         	'search-form', 
-	         ) 
+	add_theme_support( 'html5',
+	         array(
+	         	'comment-list',
+	         	'comment-form',
+	         	'search-form',
+	         )
 	);
-	
+
 	add_theme_support( 'custom-logo', array(
 		'height'      => 100,
 		'width'       => 400,
@@ -31,7 +31,7 @@ function joints_theme_support() {
 		'flex-width'  => true,
 		'header-text' => array( 'site-title', 'site-description' ),
 	) );
-	
+
 	// Adding post format support
 	 add_theme_support( 'post-formats',
 		array(
@@ -45,11 +45,26 @@ function joints_theme_support() {
 			'audio',             // audio
 			'chat'               // chat transcript
 		)
-	); 
-	
+	);
+
+	add_theme_support( 'woocommerce' );
+
+	// add_theme_support( 'woocommerce', array(
+	// 	'thumbnail_image_width' => 150,
+	// 	'single_image_width'    => 300,
+	// 	'product_grid'          => array(
+	// 			'default_rows'    => 3,
+	// 			'min_rows'        => 2,
+	// 			'max_rows'        => 8,
+	// 			'default_columns' => 4,
+	// 			'min_columns'     => 2,
+	// 			'max_columns'     => 5,
+	// 	)
+	// ) );
+
 	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
-	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );	
-	
+	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );
+
 } /* end theme support */
 
 add_action( 'after_setup_theme', 'joints_theme_support' );

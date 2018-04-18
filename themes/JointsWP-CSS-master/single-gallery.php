@@ -13,6 +13,7 @@
 	<div class="gallery-container">
 		<div class="grid-container">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+      <?php $current_post_id = get_the_ID(); ?>
       <div class="grid-x gallery-single-info">
         <div class="cell medium-7" style="text-align:center;">
           <?php the_post_thumbnail('full'); ?>
@@ -27,7 +28,7 @@
           <p><?php the_field('gallery_year'); ?></p>
           <h5 class="gallery-single-field-title">Size</h5>
           <p><?php the_field('gallery_size'); ?></p>
-          <p>Sold / Available</p>
+          <p><?php the_field('gallery_status'); ?></p>
         </div>
         <div class="cell medium-1"></div>
         <div class="medium-1 cell nowrap">
@@ -54,14 +55,22 @@
 				<div class="small-12 medium-9 cell">
           <div class="grid-x galleries-wrapper">
             <?php
+              $current_terms = get_the_terms($current_post_id, 'gallery-category');
               $gallery_query = new WP_Query(
                 array(
                   'post_type'       => 'gallery',
                   'posts_per_page'  => 3,
                   'orderby'         => 'post_date',
-                  'order'           => 'ASC'
+                  'order'           => 'ASC',
+                  'tax_query' => array(
+                    array(
+                        'taxonomy' => 'gallery-category',
+                        'field' => 'id',
+                        'terms' => $current_terms[0]->term_id
+                    )
                   )
-                );
+                )
+              );
 
               if ($gallery_query->have_posts()) :
                 while ($gallery_query->have_posts()) : $gallery_query->the_post(); ?>

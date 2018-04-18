@@ -377,6 +377,7 @@ PAGE NAVI STYLES
 .top-bar .icon-bag {
     font-size: 23px;
     margin-left: 14px;
+    color: #e63c2e;
 }
 
 .menu-logo {
@@ -611,6 +612,10 @@ SIDEBARS & ASIDES
 
 .page-sidebar__yellow {
     background-color: #ffa409;
+}
+
+.page-sidebar__blue {
+    background-color: #1675a9;
 }
 
 .terms-list {
@@ -1241,6 +1246,10 @@ a.share-icon .icon:hover:before {
 .story-item {
     padding-bottom: 80px;
     margin-bottom: 30px;
+}
+
+.story-left-content .story-item:last-child {
+    margin-bottom: 0;
 }
 
 .story-map {
