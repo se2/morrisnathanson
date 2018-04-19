@@ -131,9 +131,9 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt' );
 
 // Change In Stock / Out of Stock labels
-add_filter( 'woocommerce_get_availability', 'wcs_custom_get_availability', 1, 2);
+add_filter( 'woocommerce_get_availability', 'mn_custom_get_availability', 1, 2);
 
-function wcs_custom_get_availability( $availability, $_product ) {
+function mn_custom_get_availability( $availability, $_product ) {
 	// Change In Stock Text
 	if ( $_product->is_in_stock() ) {
 			$availability['availability'] = __('Available!', 'woocommerce');
@@ -205,9 +205,9 @@ function remove_loop_button() {
 
 add_action('init','remove_loop_button');
 
-add_action('woocommerce_after_shop_loop_item','replace_add_to_cart');
+add_action('woocommerce_after_shop_loop_item','mn_replace_add_to_cart');
 
-function replace_add_to_cart() {
+function mn_replace_add_to_cart() {
 	global $product;
 	$link = $product->add_to_cart_url();
 	echo '<a class="add-to-cart__custom" href="' . esc_attr($link) . '" ><span class="icon-bag"></span></a>';

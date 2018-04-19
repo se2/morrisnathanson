@@ -387,6 +387,7 @@ PAGE NAVI STYLES
 
 header.header {
     border-bottom: 1px solid #dadada;
+    z-index: 10;
 }
 
 /* Home Slider */
@@ -606,7 +607,8 @@ SIDEBARS & ASIDES
     width: 100%;
     max-width: 272px;
     height: 100%;
-    z-index: -999;
+    z-index: 0;
+    text-align: center;
     left: calc(1060px + ((100vw - 1060px) / 2) - (1060px / 6));
 }
 
@@ -620,7 +622,17 @@ SIDEBARS & ASIDES
 
 .terms-list {
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
+    display: inline-block;
+    margin-top: calc(6.75rem + 7.875rem);
+}
+
+.terms-list li {
+    text-align: left;
+}
+
+.terms-list li.term-active a {
+    color: #ffa409;
 }
 
 .terms-list a {
@@ -1348,7 +1360,7 @@ a.share-icon .icon:hover:before {
 
 ul.products {
     list-style-type: none;
-    margin: 0;
+    margin: 0 -10px;
 }
 
 .add-to-cart__custom {

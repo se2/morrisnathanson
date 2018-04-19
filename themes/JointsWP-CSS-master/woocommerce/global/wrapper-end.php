@@ -48,6 +48,20 @@ switch ( $template ) {
 		echo '</main></div>';
 		break;
 	default :
-		echo '</div><div class="page-sidebar page-sidebar__blue"></div></main></div>';
+		global $wp_query;
+		$terms_list = '<ul class="terms-list"><a href="/shop" class="gallery-all">Shop all Prints</a>';
+		$current_product_cat = $wp_query->get_queried_object()->term_id;
+		$terms = get_terms(
+			array(
+				'taxonomy' 		=> 'product_cat',
+				'hide_empty' 	=> false
+			)
+		);
+		foreach ($terms as $key => $term):
+			$active_class = ($current_product_cat == $term->term_id) ? 'term-active' : '';
+			$terms_list .= '<li class="term-item ' . $active_class . '"><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+		endforeach;
+		$terms_list .= '</ul>';
+		echo '</div><div class="page-sidebar page-sidebar__blue">' . $terms_list . '</div></main></div>';
 		break;
 }
