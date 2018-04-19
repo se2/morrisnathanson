@@ -52,16 +52,20 @@
 										</p>
 									</div>
 								</div>
+								<?php if (get_field('horitonzal_image_1')): ?>
 								<!-- Cover -->
 								<div class="small-12 medium-12 cell bg-cover story-cover-1" style="background-image:url('<?php the_field('horitonzal_image_1'); ?>');"></div>
+								<?php endif; ?>
 								<!-- Content -->
 								<div class="small-12 medium-12 cell story-content-section">
 									<div class="post-content">
 										<?php the_field('story_content'); ?>
 									</div>
 								</div>
+								<?php if (get_field('horitonzal_image_2')): ?>
 								<!-- Cover -->
 								<div class="small-12 medium-12 cell bg-cover story-cover-1" style="background-image:url('<?php the_field('horitonzal_image_2'); ?>');"></div>
+								<?php endif; ?>
 							</div>
 
 							<?php endwhile; ?>

@@ -706,7 +706,8 @@ SIDEBARS & ASIDES
 }
 
 .gallery-name,
-.woocommerce-loop-product__title {
+.woocommerce-loop-product__title,
+.related.products .woocommerce-loop-product__title {
     color: black;
     font-size: 16px;
     line-height: 24px;
@@ -1313,6 +1314,7 @@ a.share-icon .icon:hover:before {
 
 /* Single Pages */
 
+.related.products h2,
 .related-posts {
     text-transform: uppercase;
     font-size: 16px;
@@ -1331,6 +1333,8 @@ a.share-icon .icon:hover:before {
     max-width: calc(100% - 80px);
 }
 
+.summary p,
+.summary span,
 .gallery-single-info p,
 .gallery-single-info span {
     font-size: 16px;
@@ -1340,13 +1344,7 @@ a.share-icon .icon:hover:before {
     letter-spacing: 0.025em;
 }
 
-.gallery-single-title {
-    font-size: 24px;
-    letter-spacing: 0.025em;
-    font-weight: 500;
-    margin-bottom: 36px;
-}
-
+.summary h2,
 .gallery-single-field-title {
     font-size: 16px;
     font-weight: 600;
@@ -1354,6 +1352,20 @@ a.share-icon .icon:hover:before {
     line-height: 24px;
     text-transform: uppercase;
     color: #8a8c8e;
+}
+
+.gallery-single-title,
+.product_title,
+.entry-title,
+.summary .amount,
+.amount .woocommerce-Price-currencySymbol {
+    font-style: normal;
+    color: black;
+    font-family: "Lato";
+    font-size: 24px;
+    letter-spacing: 0.025em;
+    font-weight: 500;
+    margin-bottom: 36px;
 }
 
 /* Woocommerce Styling */
@@ -1389,6 +1401,50 @@ ul.products {
 
 .woocommerce-message .button {
     display: none;
+}
+
+/* .gallery-bg.gallery-bg_single-product {
+    padding-bottom: 101.525%;
+} */
+
+/* only hide short description in single product page  */
+.summary .woocommerce-product-details__short-description {
+    display: none;
+}
+
+.product .summary {
+    padding-left: 50px;
+}
+
+.product-image-wrapper,
+.product-info-wrapper {
+    margin-bottom: 100px;
+}
+
+.product_title {
+    margin-bottom: 0;
+}
+
+.stock {
+    margin-bottom: 40px;
+}
+
+.single_add_to_cart_button {
+    font-family: "Lato";
+    font-size: 20px;
+    color: black;
+    line-height: 1;
+    padding: 12px 70px;
+    background-color: transparent;
+    border: 2px solid black;
+}
+
+.single_add_to_cart_button:hover {
+    background-color: black;
+}
+
+.woocommerce-loop-product__title {
+    margin-bottom: 0;
 }
 
 /*************** News Classes (shared between Homepage and Press & Events pages) ****************/

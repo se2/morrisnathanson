@@ -136,7 +136,7 @@ add_filter( 'woocommerce_get_availability', 'mn_custom_get_availability', 1, 2);
 function mn_custom_get_availability( $availability, $_product ) {
 	// Change In Stock Text
 	if ( $_product->is_in_stock() ) {
-			$availability['availability'] = __('Available!', 'woocommerce');
+			$availability['availability'] = __('Available', 'woocommerce');
 	}
 	// Change Out of Stock Text
 	if ( ! $_product->is_in_stock() ) {
@@ -157,7 +157,6 @@ function mn_stock_catalog() {
 
 add_action( 'woocommerce_after_shop_loop_item_title', 'mn_stock_catalog' );
 
-
 /* This snippet removes the action that inserts thumbnails to products in teh loop
  * and re-adds the function customized with our wrapper in it.
  * It applies to all archives with products.
@@ -165,16 +164,20 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'mn_stock_catalog' );
  * @original plugin: WooCommerce
  * @author of snippet: Brian Krogsard
  */
+
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+
 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+
 /**
  * WooCommerce Loop Product Thumbs
  **/
- if ( ! function_exists( 'woocommerce_template_loop_product_thumbnail' ) ) {
+if ( ! function_exists( 'woocommerce_template_loop_product_thumbnail' ) ) {
 	function woocommerce_template_loop_product_thumbnail() {
 		echo woocommerce_get_product_thumbnail();
 	}
- }
+}
+
 /**
  * WooCommerce Product Thumbnail
  **/
@@ -212,3 +215,57 @@ function mn_replace_add_to_cart() {
 	$link = $product->add_to_cart_url();
 	echo '<a class="add-to-cart__custom" href="' . esc_attr($link) . '" ><span class="icon-bag"></span></a>';
 }
+
+/**
+ *
+ * Change number of related products on product page
+ * Set your own value for 'posts_per_page'
+ *
+ */
+function woo_related_products_limit() {
+  global $product;
+	$args['posts_per_page'] = 6;
+	return $args;
+}
+
+add_filter( 'woocommerce_output_related_products_args', 'mn_related_products_args' );
+
+function mn_related_products_args( $args ) {
+	$args['posts_per_page'] = 3; // 3 related products
+	$args['columns'] = 3; 			// arranged in 3 columns
+	return $args;
+}
+
+// Remove product meta data from product single page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+// Remove woocommerce tabs
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+
+// Add full description to below price
+function woocommerce_template_product_description() {
+  woocommerce_get_template( 'single-product/tabs/description.php' );
+}
+
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 20 );
+
+// Change the Product Description Title
+add_filter('woocommerce_product_description_heading', 'mn_product_description_heading');
+
+function mn_product_description_heading() {
+	return __('Details', 'woocommerce');
+}
+
+/**
+ * @snippet       Display Advanced Custom Fields @ Single Product - WooCommerce
+ * @how-to        Watch tutorial @ https://businessbloomer.com/?p=19055
+ * @sourcecode    https://businessbloomer.com/?p=22015
+ * @author        Rodolfo Melogli
+ * @testedwith    WooCommerce 2.5.2
+ */
+
+// add_action( 'woocommerce_single_product_summary', 'mn_display_acf_field_summary', 30 );
+
+// function mn_display_acf_field_summary() {
+//   echo '<h5 class="gallery-single-field-title">Size:</h5><p>' . get_field('product_size') . '</p>';
+// }

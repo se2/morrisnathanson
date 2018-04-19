@@ -884,6 +884,48 @@
         "description": ""
     },
     {
+        "key": "group_5ad8cb280d5c3",
+        "title": "Product (Single Post)",
+        "fields": [
+            {
+                "key": "field_5ad8cb36aa7af",
+                "label": "Product Size",
+                "name": "product_size",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "18”x12”",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
         "key": "group_5acf9093e9df0",
         "title": "Story (Single Post)",
         "fields": [

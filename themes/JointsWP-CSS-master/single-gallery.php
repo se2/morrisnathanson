@@ -30,24 +30,6 @@
           <p><?php the_field('gallery_size'); ?></p>
           <p><?php the_field('gallery_status'); ?></p>
         </div>
-        <div class="cell medium-1"></div>
-        <div class="medium-1 cell nowrap">
-          <a href="/gallery" class="gallery-all">All artwork</a>
-          <ul class="terms-list">
-            <?php
-              $terms = get_terms(
-                array(
-                  'taxonomy' => 'gallery-category',
-                  'hide_empty' => false,
-                  'order' => 'DESC'
-              ) );
-              foreach ($terms as $key => $term) : ?>
-              <li class="term-item">
-                <a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a>
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
       </div>
       <?php endwhile; endif; ?>
 			<div class="grid-x gallery-single-related">
@@ -100,6 +82,21 @@
 	</div>
 
 	<div class="page-sidebar page-sidebar__yellow">
+    <ul class="terms-list">
+      <a href="/gallery" class="gallery-all">All artwork</a>
+      <?php
+        $terms = get_terms(
+          array(
+            'taxonomy' => 'gallery-category',
+            'hide_empty' => false,
+            'order' => 'DESC'
+        ) );
+        foreach ($terms as $key => $term) : ?>
+        <li class="term-item">
+          <a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
 	</div>
 </div>
 
