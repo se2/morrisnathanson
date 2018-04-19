@@ -612,6 +612,12 @@ SIDEBARS & ASIDES
     left: calc(1060px + ((100vw - 1060px) / 2) - (1060px / 6));
 }
 
+@media only screen and (max-width: 1024px) {
+    .page-sidebar {
+        left: calc(1060px + ((100vw - 1060px) / 2) - (1060px / 4));
+    }
+}
+
 .page-sidebar__yellow {
     background-color: #ffa409;
 }
@@ -1419,6 +1425,12 @@ ul.products {
 .product-image-wrapper,
 .product-info-wrapper {
     margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .product .product-info-wrapper {
+        width: 33.333333%;
+    }
 }
 
 .product_title {
