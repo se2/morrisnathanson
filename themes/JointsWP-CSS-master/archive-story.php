@@ -67,30 +67,26 @@
 							<?php endwhile; ?>
 						<?php endif; ?>
 				</div>
-				<div class="medium-1 cell"></div>
-				<div class="medium-1 cell nowrap">
-					<ul class="terms-list">
-						<?php
-							$terms = get_terms(
-								array(
-									'taxonomy' => 'story-category',
-									// 'hide_empty' => false,
-									'order' => 'DESC'
-							) );
-							foreach ($terms as $key => $term) : ?>
-							<li class="term-item">
-								<a href="#"><?php echo $term->name; ?></a>
-							</li>
-						<?php endforeach; ?>
-					</ul>
-				</div>
-
 				<?php wp_reset_query(); ?>
 			</div>
 		</div>
 	</div>
 
 	<div class="page-sidebar">
+		<ul class="terms-list">
+			<?php
+				$terms = get_terms(
+					array(
+						'taxonomy' => 'story-category',
+						// 'hide_empty' => false,
+						'order' => 'DESC'
+				) );
+				foreach ($terms as $key => $term) : ?>
+				<li class="term-item">
+					<a href="#"><?php echo $term->name; ?></a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
 	</div>
 </div>
 
