@@ -93,7 +93,9 @@ if ( function_exists('register_sidebar') ) {
 	}
 }
 
-// Woocommerce functions
+/**
+ * Woo-commerce Custom Functions
+ */
 
 // Remove all WooCommerce styling
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
@@ -102,7 +104,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 add_action( 'init', 'woo_remove_wc_breadcrumbs' );
 
 function woo_remove_wc_breadcrumbs() {
-    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
 
 // Remove sidebar
@@ -113,3 +115,100 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
 //remove default sorting drop-down from WooCommerce
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+/**
+ * @snippet       WooCommerce Hide Prices on the Shop Page
+ * @how-to        Watch tutorial @ https://businessbloomer.com/?p=19055
+ * @sourcecode    https://businessbloomer.com/?p=406
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 2.4.7
+ */
+
+// Remove prices
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+
+// Add product short description to Shop page
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt' );
+
+// Change In Stock / Out of Stock labels
+add_filter( 'woocommerce_get_availability', 'wcs_custom_get_availability', 1, 2);
+
+function wcs_custom_get_availability( $availability, $_product ) {
+	// Change In Stock Text
+	if ( $_product->is_in_stock() ) {
+			$availability['availability'] = __('Available!', 'woocommerce');
+	}
+	// Change Out of Stock Text
+	if ( ! $_product->is_in_stock() ) {
+			$availability['availability'] = __('Sold', 'woocommerce');
+	}
+	return $availability;
+}
+
+//* Add stock status to archive pages
+function mn_stock_catalog() {
+	global $product;
+	if ( $product->is_in_stock() ) {
+		echo '<div class="gallery-info"><p>' . $product->get_stock_quantity() . __( 'Available', 'mn' ) . '</p></div>';
+	} else {
+		echo '<div class="gallery-info"><p>' . __( 'Sold', 'mn' ) . '</p></div>';
+	}
+}
+
+add_action( 'woocommerce_after_shop_loop_item_title', 'mn_stock_catalog' );
+
+
+/* This snippet removes the action that inserts thumbnails to products in teh loop
+ * and re-adds the function customized with our wrapper in it.
+ * It applies to all archives with products.
+ *
+ * @original plugin: WooCommerce
+ * @author of snippet: Brian Krogsard
+ */
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+/**
+ * WooCommerce Loop Product Thumbs
+ **/
+ if ( ! function_exists( 'woocommerce_template_loop_product_thumbnail' ) ) {
+	function woocommerce_template_loop_product_thumbnail() {
+		echo woocommerce_get_product_thumbnail();
+	}
+ }
+/**
+ * WooCommerce Product Thumbnail
+ **/
+if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
+	function woocommerce_get_product_thumbnail( $size = 'shop_catalog', $placeholder_width = 0, $placeholder_height = 0  ) {
+		global $post, $woocommerce;
+		$output = '<div class="gallery-bg">';
+		if ( has_post_thumbnail() ) {
+			$output .= get_the_post_thumbnail( $post->ID, $size );
+		} else {
+			$output .= '<img src="'. woocommerce_placeholder_img_src() .'" alt="Placeholder"" />';
+		}
+		$output .= '</div>';
+		return $output;
+	}
+}
+
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'add_icon_add_cart_button_single' );
+
+function add_icon_add_cart_button_single( $button ) {
+	$button_new = $button . " »";
+	return $button_new;
+}
+
+function remove_loop_button() {
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+}
+
+add_action('init','remove_loop_button');
+
+add_action('woocommerce_after_shop_loop_item','replace_add_to_cart');
+
+function replace_add_to_cart() {
+	global $product;
+	$link = $product->add_to_cart_url();
+	echo '<a class="add-to-cart__custom" href="' . esc_attr($link) . '" ><span class="icon-bag"></span></a>';
+}

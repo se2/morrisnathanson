@@ -26,8 +26,13 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
+
+$classes[] = 'medium-4';
+$classes[] = 'gallery-item';
+$classes[] = 'pos-rel';
+
 ?>
-<li <?php post_class(); ?>>
+<li <?php post_class( $classes ); ?>>
 	<?php
 	/**
 	 * woocommerce_before_shop_loop_item hook.

@@ -21,4 +21,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div class="grid-x">
-		<ul class="small-12 medium-9 cell products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+	<ul class="small-12 medium-9 cell grid-x products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">

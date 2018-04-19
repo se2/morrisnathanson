@@ -47,20 +47,16 @@ function joints_theme_support() {
 		)
 	);
 
-	add_theme_support( 'woocommerce' );
-
-	// add_theme_support( 'woocommerce', array(
-	// 	'thumbnail_image_width' => 150,
-	// 	'single_image_width'    => 300,
-	// 	'product_grid'          => array(
-	// 			'default_rows'    => 3,
-	// 			'min_rows'        => 2,
-	// 			'max_rows'        => 8,
-	// 			'default_columns' => 4,
-	// 			'min_columns'     => 2,
-	// 			'max_columns'     => 5,
-	// 	)
-	// ) );
+	add_theme_support( 'woocommerce', array(
+		'product_grid'          => array(
+				'default_rows'    => 3,
+				'min_rows'        => 1,
+				'max_rows'        => 3,
+				'default_columns' => 3,
+				'min_columns'     => 1,
+				'max_columns'     => 5
+		)
+	) );
 
 	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
 	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );

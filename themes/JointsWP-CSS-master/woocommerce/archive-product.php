@@ -35,6 +35,16 @@ do_action( 'woocommerce_before_main_content' );
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+		<div class="grid-x gallery-sub-section">
+			<div class="cell medium-6 gallery-subtitle">
+				<span>Hand-signed prints, on 100% archival paper.</span>
+			</div>
+			<div class="cell medium-3 gallery-notice">
+				<span>
+				For framing guidelines and instructions, please reference the following <a href="mailto:email@domain.com"><i>LINK »</i></a>
+				</span>
+			</div>
+		</div>
 	<?php endif; ?>
 
 	<?php

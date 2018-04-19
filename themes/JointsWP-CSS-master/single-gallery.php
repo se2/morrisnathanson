@@ -61,7 +61,7 @@
                   'post_type'       => 'gallery',
                   'posts_per_page'  => 3,
                   'orderby'         => 'post_date',
-                  'order'           => 'ASC',
+                  'order'           => 'DESC',
                   'tax_query' => array(
                     array(
                         'taxonomy' => 'gallery-category',

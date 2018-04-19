@@ -693,14 +693,20 @@ SIDEBARS & ASIDES
     margin: auto;
 }
 
-.gallery-name {
+.gallery-name,
+.woocommerce-loop-product__title {
     color: black;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.025em;
     transition: color 300ms;
+    text-transform: capitalize;
+    font-weight: normal;
+    margin-bottom: 0;
 }
 
+.woocommerce-product-details__short-description,
+.woocommerce-product-details__short-description p,
 .gallery-info,
 .gallery-info p {
     color: #8a8c8e;
@@ -1343,6 +1349,34 @@ a.share-icon .icon:hover:before {
 ul.products {
     list-style-type: none;
     margin: 0;
+}
+
+.add-to-cart__custom {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    top: 14px;
+    z-index: 999;
+    right: 24px;
+    align-items: center;
+    align-content: center;
+}
+
+.add-to-cart__custom span {
+    font-size: 27px;
+    margin: 0 auto;
+}
+
+.woocommerce-message {
+    padding: 20px 10px;
+    color: #1675a9;
+}
+
+.woocommerce-message .button {
+    display: none;
 }
 
 /*************** News Classes (shared between Homepage and Press & Events pages) ****************/
