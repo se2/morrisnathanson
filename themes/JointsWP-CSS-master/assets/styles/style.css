@@ -385,7 +385,7 @@ PAGE NAVI STYLES
     height: 59px;
 }
 
-header {
+header.header {
     border-bottom: 1px solid #dadada;
 }
 
@@ -1336,6 +1336,13 @@ a.share-icon .icon:hover:before {
     line-height: 24px;
     text-transform: uppercase;
     color: #8a8c8e;
+}
+
+/* Woocommerce Styling */
+
+ul.products {
+    list-style-type: none;
+    margin: 0;
 }
 
 /*************** News Classes (shared between Homepage and Press & Events pages) ****************/

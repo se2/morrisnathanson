@@ -48,6 +48,6 @@ switch ( $template ) {
 		echo '</main></div>';
 		break;
 	default :
-		echo '</div></main></div>';
+		echo '<div class="page-sidebar page-sidebar__blue"></div></div></main></div>';
 		break;
 }

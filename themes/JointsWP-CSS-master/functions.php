@@ -107,3 +107,9 @@ function woo_remove_wc_breadcrumbs() {
 
 // Remove sidebar
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+//remove display notice - Showing all x results
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+//remove default sorting drop-down from WooCommerce
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
