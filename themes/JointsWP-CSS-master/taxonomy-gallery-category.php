@@ -9,10 +9,10 @@
       </div>
       <div class="cell gallery-sub-section">
         <div class="grid-x pos-rel">
-          <div class="cell small-6 medium-6 gallery-subtitle">
+          <div class="cell small-12 medium-6 gallery-subtitle">
             <span>Showcasing the complete archive of original Morris Nathanson artwork.</span>
           </div>
-          <div class="cell small-6 medium-3 gallery-notice">
+          <div class="cell small-12 medium-3 gallery-notice">
             <span>
               For orginal artwork purchases/inquiries, please contact gallery respresentative:<br><a href="#" data-open="studio-purchase-modal"><i>Phyllis Van Orden</i></a>
             </span>
