@@ -14,7 +14,7 @@
 
 						<div id="footer-sidebar" class="footer-links secondary grid-x">
 							<?php for ($i = 1; $i <= 6 ; $i++): ?>
-								<div id="footer-sidebar<?php echo $i; ?>" class="footer-menu medium-2 large-2 cell">
+								<div id="footer-sidebar<?php echo $i; ?>" class="footer-menu small-6 medium-2 large-2 cell">
 									<?php if (is_active_sidebar('footer-sidebar-' . $i)) { dynamic_sidebar('footer-sidebar-' . $i); } ?>
 								</div>
 							<?php endfor; ?>

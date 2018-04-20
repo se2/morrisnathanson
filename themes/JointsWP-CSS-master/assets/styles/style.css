@@ -319,6 +319,10 @@ PAGE NAVI STYLES
     background-color: #fff;
 }
 
+.menu a,
+.menu button,
+.menu input,
+.menu select,
 .top-bar a {
     text-transform: uppercase;
     padding: 0;
@@ -329,7 +333,8 @@ PAGE NAVI STYLES
     font-size: 15px;
 }
 
-.top-bar .menu.secondary-menu a {
+.top-bar .menu.secondary-menu a,
+.top-bar .menu.secondary-menu .shopping-label {
     text-transform: none;
     font-size: 14px;
     color: #e63c2e;
@@ -337,6 +342,12 @@ PAGE NAVI STYLES
     align-items: center;
     min-height: 23px;
     margin-left: 14px;
+}
+
+@media print, screen and (max-width: 480px) {
+    .top-bar .menu.secondary-menu .shopping-label {
+        display: none;
+    }
 }
 
 .top-bar a:hover {
@@ -354,6 +365,13 @@ PAGE NAVI STYLES
     align-items: flex-end;
 }
 
+@media print, screen and (max-width: 480px) {
+    .top-bar {
+        height: 100px;
+        padding-bottom: 20px;
+    }
+}
+
 .top-bar .menu .active>a {
     color: #e63c2e;
     background-color: transparent;
@@ -366,8 +384,14 @@ PAGE NAVI STYLES
 
 .top-bar-right.top-bar-abs {
     position: absolute;
-    right: 20px;
+    right: 0;
     top: 53px;
+}
+
+@media print, screen and (max-width: 480px) {
+    .top-bar-right.top-bar-abs {
+        top: 20px;
+    }
 }
 
 .top-bar-right.menu-wrapper {
@@ -388,6 +412,47 @@ PAGE NAVI STYLES
 header.header {
     border-bottom: 1px solid #dadada;
     z-index: 10;
+}
+
+.hamburger-menu {
+    position: absolute;
+    right: 0;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.hamburger-menu .menu-icon {
+    margin: 0;
+}
+
+.menu-icon::after {
+    background: #e63c2e;
+    box-shadow: 0 7px 0 #e63c2e, 0 14px 0 #e63c2e;
+}
+
+div#off-canvas {
+    box-shadow: none;
+    background: #ffa409;
+    padding: 50px;
+}
+
+div#off-canvas .menu li {
+    padding-bottom: 40px;
+}
+
+div#off-canvas .menu li.active a {
+    background: transparent;
+    color: #e63c2e;
+}
+
+div#off-canvas .menu a,
+div#off-canvas .menu button,
+div#off-canvas .menu input,
+div#off-canvas .menu select {
+    color: white;
+    font-size: 21px;
+    outline: none;
 }
 
 /* Home Slider */
@@ -795,6 +860,25 @@ FOOTER STYLES
     letter-spacing: 0.025em;
 }
 
+@media only screen and (max-width: 768px) {
+    .footer {
+        padding: 50px 0;
+    }
+    #footer-sidebar .footer-menu {
+        width: 33.333333%;
+        margin-bottom: 40px;
+    }
+    .footer-links {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #footer-sidebar .footer-menu {
+        width: 50%;
+    }
+}
+
 /*********************
 VISUAL EDITOR STYLES
 *********************/
@@ -1167,7 +1251,6 @@ a.home-cta {
     text-align: center;
     padding-top: 23px;
     visibility: hidden;
-    /* position: absolute; */
 }
 
 #in-the-studio-slideshow {
