@@ -73,10 +73,16 @@ get_header(); ?>
 
 <!-- In Progress Slider -->
 <div class="background-image studio-progress-container" style="background-image: url('<?php the_field('studio_progress_background_image'); ?>');">
-	<div class="grid-x">
-		<div class="cell">
-			<?php echo do_shortcode('[metaslider id="57"]'); ?>
+	<div class="slideshow-wrapper" id="in-the-studio-slideshow">
+		<?php
+			$slides = get_field('slideshow');
+			foreach ($slides as $key => $slide) :
+		?>
+		<div class="in-the-studio-slide">
+			<div class="slide-image bg-cover" style="background-image:url('<?php echo $slide['slide_image']; ?>');"></div>
+			<div class="slide-caption"><?php echo $slide['slide_caption']; ?></div>
 		</div>
+		<?php endforeach; ?>
 	</div>
 </div>
 

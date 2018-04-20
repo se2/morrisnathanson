@@ -29,10 +29,18 @@ jQuery(document).ready(function () { // Remove empty P tags created by WP inside
                     slidesToScroll: 1
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
+    });
+    jQuery('#in-the-studio-slideshow').slick({
+        infinite: true,
+        centerMode: true,
+        centerPadding: '30px',
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        nextArrow: "<div class='slide-arrow slide-next'></div>",
+        prevArrow: "<div class='slide-arrow slide-prev'></div>",
+        speed: 900
     });
 });
 
