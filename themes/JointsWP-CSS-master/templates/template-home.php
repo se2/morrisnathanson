@@ -9,7 +9,7 @@ get_header(); ?>
 <div class="home-banner background-image" style="background-image: url('<?php the_field('home_banner_image'); ?>');">
 	<div class="grid-container">
 		<div class="grid-x">
-			<div class="cell medium-4 home-banner-text">
+			<div class="cell small-12 medium-4 home-banner-text">
 				<p class="home-headline-small">Morris Nathanson</p>
 				<h1 class="home-headline-large"><?php the_field('home_banner_headline'); ?></h1>
 				<a class="home-banner-cta" href="<?php the_field('home_banner_cta_link'); ?>"><?php the_field('home_banner_cta_text'); ?></a>
@@ -31,7 +31,7 @@ get_header(); ?>
 		<div class="grid-x">
 			<div class="medium-12 cell">
 					<!-- News article repeater -->
-					<?php if( have_rows('home_featured') ): ?>
+					<?php if( have_rows('home_featured') ): $color_idx = 0; ?>
 						<div class="grid-x grid-padding-x medium-up-3 small-up-1" id="home-slider">
 							<?php while ( have_rows('home_featured') ) : the_row(); ?>
 
@@ -42,6 +42,7 @@ get_header(); ?>
 
 										<?php
 											$post = $post_object; setup_postdata( $post );
+											$colors = array('#ffa409', '#e63c2e', '#1675a9');
 											$news_article_title = get_the_title($post_object->ID);
 											$news_article_url = get_field('news_article_url', $post_object ->ID);
 											$news_article_vertical_image = get_field('news_article_vertical_image', $post_object->ID);
@@ -57,7 +58,7 @@ get_header(); ?>
 													</div>
 												</div>
 
-												<div class="home-featured-link-container">
+												<div class="home-featured-link-container" style="background-color:<?php echo $colors[$color_idx]; ?>">
 													<a class="news-link" href="<?php echo $news_article_url; ?>" target="_blank">Learn&nbsp;more&nbsp;&raquo;</a>
 												</div>
 
@@ -67,7 +68,7 @@ get_header(); ?>
 
 									<?php endif; ?>
 
-							<?php endwhile; ?>
+							<?php ($color_idx == sizeof($colors) - 1) ? $color_idx = 0 : $color_idx++; endwhile; ?>
 						</div>
 					<?php endif; ?>
 				</div>

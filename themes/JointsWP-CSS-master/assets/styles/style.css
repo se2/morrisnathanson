@@ -461,6 +461,12 @@ div#off-canvas .menu select {
     padding: 0 20px;
 }
 
+@media print, screen and (max-width: 375px) {
+    #home-slider .slick-slide {
+        padding: 0;
+    }
+}
+
 .slide-arrow {
     position: absolute;
     top: 50%;
@@ -1067,6 +1073,18 @@ span {
     color: #ffffff;
 }
 
+@media print, screen and (max-width: 768px) {
+    .home-banner .home-banner-text {
+        width: 50%;
+    }
+}
+
+@media print, screen and (max-width: 480px) {
+    .home-banner .home-banner-text {
+        width: 100%;
+    }
+}
+
 .home-banner-text p {
     color: #ffffff;
 }
@@ -1081,6 +1099,24 @@ span {
     font-size: 8.125rem;
     line-height: 6.25rem;
     padding-bottom: 3.125rem;
+}
+
+@media print, screen and (max-width: 480px) {
+    .home-headline-large {
+        font-size: 6.5rem;
+    }
+}
+
+@media print, screen and (max-width: 320px) {
+    .home-headline-large {
+        font-size: 5.5rem;
+        line-height: 1;
+        padding-bottom: 1.5rem;
+    }
+    .home-banner-text {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
 }
 
 .home-banner-cta {
@@ -1103,16 +1139,6 @@ span {
 
 .home-featured-link-container {
     padding: 1.125rem;
-}
-
-#home-slider .home-featured-item-container:nth-child(n+3) .home-featured-link-container {
-    background-color: #ffa409;
-}
-#home-slider .home-featured-item-container:nth-child(2n+3) .home-featured-link-container {
-    background-color: #e63c2e;
-}
-#home-slider .home-featured-item-container:nth-child(3n+3) .home-featured-link-container {
-    background-color: #1675a9;
 }
 
 .home-cta-container {
@@ -1141,6 +1167,13 @@ a.home-cta {
     padding: 0 3.125rem 3.125rem 3.125rem;
     margin-top: 6rem;
     margin-bottom: 6rem;
+}
+
+@media print, screen and (max-width: 375px) {
+    .home-quote-text-container {
+        padding-left: 2.125rem;
+        padding-right: 2.125rem;
+    }
 }
 
 .quote-text {
