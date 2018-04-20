@@ -1481,6 +1481,12 @@ screen and (max-width: 375px) {
     padding: 3.438rem 0 2.75rem 0;
 }
 
+@media screen and (max-width: 768px) {
+    .news-archive-header {
+        font-size: 21px;
+    }
+}
+
 .news-archive-link {
     font-size: 1.1875rem;
     text-transform: uppercase;
@@ -1513,7 +1519,8 @@ screen and (max-width: 375px) {
     font-weight: 700;
 }
 
-a.share-icon {
+a.share-icon,
+span.icon {
     font-size: 33px;
 }
 
