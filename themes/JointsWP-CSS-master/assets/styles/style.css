@@ -598,6 +598,7 @@ SIDEBARS & ASIDES
     position: relative;
     width: 100%;
     margin: 0 auto;
+    min-height: 600px;
 }
 
 .page-sidebar {
@@ -639,6 +640,10 @@ SIDEBARS & ASIDES
 
 .terms-list li.term-active a {
     color: #ffa409;
+}
+
+.terms-list li.term-active__red a {
+    color: #e63c2e;
 }
 
 .terms-list a {
