@@ -21,7 +21,7 @@
 		<div class="top-bar-right top-bar-abs">
 			<ul class="menu secondary-menu">
 				<li>
-					<a href="#" data-open="studio-contact-modal">Contact</a>
+					<a href="#" data-open="studio-general-modal">Contact</a>
 				</li>
 				<li>
 					<a href="/cart">Shopping Cart<span class="icon-bag"></span></a>

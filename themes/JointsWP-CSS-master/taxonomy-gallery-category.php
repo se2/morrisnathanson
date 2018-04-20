@@ -14,7 +14,7 @@
           </div>
           <div class="cell medium-3 gallery-notice">
             <span>
-              For orginal artwork purchases/inquiries, please contact gallery respresentative:<br><a href="mailto:email@domain.com"><i>Phyllis Van Orden</i></a>
+              For orginal artwork purchases/inquiries, please contact gallery respresentative:<br><a href="#" data-open="studio-purchase-modal"><i>Phyllis Van Orden</i></a>
             </span>
           </div>
           <div class="medium-2 cell nowrap"></div>

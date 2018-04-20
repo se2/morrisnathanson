@@ -93,6 +93,20 @@ if ( function_exists('register_sidebar') ) {
 	}
 }
 
+add_filter( 'nav_menu_link_attributes', 'mn_shop_menu_atts', 10, 3 );
+
+function mn_shop_menu_atts( $atts, $item, $args ) {
+
+	// The ID of the target menu item
+  $menu_target = 155;
+
+  // inspect $item
+  if ($item->ID == $menu_target) {
+    $atts['data-open'] = 'studio-purchase-modal';
+  }
+  return $atts;
+}
+
 /**
  * Woo-commerce Custom Functions
  */

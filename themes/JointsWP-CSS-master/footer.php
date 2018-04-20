@@ -29,7 +29,21 @@
 				</footer> <!-- end .footer -->
 
 				<div class="reveal" id="studio-contact-modal" data-reveal>
-					<?php echo do_shortcode('[contact-form-7 id="78" title="Contact form 1"]'); ?>
+					<?php echo do_shortcode('[contact-form-7 id="78" title="Schedule a Visit"]'); ?>
+					<button class="close-button" data-close aria-label="Close modal" type="button">
+						<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+
+				<div class="reveal" id="studio-general-modal" data-reveal>
+					<?php echo do_shortcode('[contact-form-7 id="256" title="General Inquiry"]'); ?>
+					<button class="close-button" data-close aria-label="Close modal" type="button">
+						<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+
+				<div class="reveal" id="studio-purchase-modal" data-reveal>
+					<?php echo do_shortcode('[contact-form-7 id="257" title="Purchase Interest"]'); ?>
 					<button class="close-button" data-close aria-label="Close modal" type="button">
 						<span aria-hidden="true">&times;</span>
 				  </button>
