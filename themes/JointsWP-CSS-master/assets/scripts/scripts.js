@@ -7,7 +7,7 @@ jQuery(document).ready(function () {
     // Remove empty P tags created by WP inside of Accordion and Orbit
     jQuery('.accordion p:empty, .orbit p:empty').remove();
     // Adds Flex Video to YouTube and Vimeo Embeds
-    // jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function () { if (jQuery(this).innerWidth() / jQuery(this).innerHeight() > 1.5) { jQuery(this).wrap("<div class='widescreen responsive-embed'/>"); } else { jQuery(this).wrap("<div class='responsive-embed'/>"); } });
+    jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function () { if (jQuery(this).innerWidth() / jQuery(this).innerHeight() > 1.5) { jQuery(this).wrap("<div class='widescreen responsive-embed'/>"); } else { jQuery(this).wrap("<div class='responsive-embed'/>"); } });
     // homepage slick slider
     jQuery('#home-slider').slick({
         infinite: true,
@@ -41,7 +41,17 @@ jQuery(document).ready(function () {
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
-        speed: 900
+        speed: 900,
+        responsive: [
+            {
+                breakpoint: 481,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
     // custom next/prev functions
     jQuery('#in-the-studio-arrows .slide-next').click(function () {

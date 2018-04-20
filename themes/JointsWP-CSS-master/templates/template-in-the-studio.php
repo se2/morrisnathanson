@@ -31,32 +31,24 @@ get_header(); ?>
 	<div class="grid-container">
 		<div class="grid-x">
 			<div class="medium-12 cell">
-
 				<?php if( have_rows('studio_related_videos') ): ?>
-
 					<div class="grid-x medium-up-3 small-up-1">
-
 						<?php while ( have_rows('studio_related_videos') ) : the_row();
 							$studio_related_video_thumbnail = get_sub_field('studio_related_video_thumbnail');
 							$studio_related_video_url = get_sub_field('studio_related_video_url');
 							$studio_related_video_caption = get_sub_field('studio_related_video_caption');
 						?>
-
-							<div class="cell medium-4 text-center studio-related-video-link">
+							<div class="cell small-12 medium-4 text-center studio-related-video-link">
 								<a href='<?php echo $studio_related_video_url; ?>' rel="lightbox" data-lightbox-type="iframe">
 									<?php if( !empty($studio_related_video_thumbnail) ): ?>
 										<img src="<?php echo $studio_related_video_thumbnail['url']; ?>" src="<?php echo $studio_related_video_thumbnail['alt']; ?>" />
 									<?php endif; ?>
 								</a>
-
 								<p class="studio-related-video-caption"><?php echo $studio_related_video_caption; ?></p>
 							</div>
-
 						<?php endwhile; ?>
-
 					</div>
 				<?php endif; ?>
-
 			</div>
 		</div>
 	</div>
@@ -85,8 +77,8 @@ get_header(); ?>
 		<?php endforeach; ?>
 	</div>
 	<div class="slide-arrows" id="in-the-studio-arrows">
-		<div class="slide-arrow slide-prev slick-arrow" style="display: block;"></div>
-		<div class="slide-arrow slide-next slick-arrow" style="display: block;"></div>
+		<div class="slide-arrow slide-prev slick-arrow"></div>
+		<div class="slide-arrow slide-next slick-arrow"></div>
 	</div>
 </div>
 
@@ -97,16 +89,13 @@ get_header(); ?>
 			<div class="medium-4 cell">
 				<h3><?php the_field('studio_visit_headline'); ?></h3>
 			</div>
-
 			<div class="medium-7 medium-offset-1 cell studio-visit-description">
 				<p><?php the_field('studio_visit_description'); ?></p>
-
 				<div class="grid-x shrink">
 					<div class="studio-visit-button outline-button" data-open="studio-contact-modal">
 						<?php the_field('studio_visit_cta_text'); ?>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

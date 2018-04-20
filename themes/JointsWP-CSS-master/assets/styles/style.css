@@ -1041,6 +1041,8 @@ span {
 @media screen and (max-width: 480px) {
     .page-title {
         padding-bottom: 1rem;
+        font-size: 4.625rem;
+        line-height: 1;
     }
 }
 
@@ -1272,6 +1274,22 @@ screen and (max-width: 375px) {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+    .studio-related-video-link {
+        padding: 0 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .studio-related-video-link {
+        margin-bottom: 40px;
+    }
+    .studio-related-video-link img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 .studio-related-video-caption {
     font-size: 1.125rem;
     text-align: center;
@@ -1285,6 +1303,18 @@ screen and (max-width: 375px) {
 
 .studio-progress-header {
     padding: 4.688rem 0 1.875rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    .studio-progress-container {
+        padding: 2.625rem 0;
+    }
+    .slide-arrows {
+        bottom: 2.625rem;
+    }
+    .studio-progress-header {
+        padding-top: 2.688rem;
+    }
 }
 
 .caption-wrap {
@@ -1322,6 +1352,13 @@ screen and (max-width: 375px) {
     text-transform: none;
 }
 
+@media screen and (max-width: 768px) {
+    .studio-visit-cta h3 {
+        font-size: 4.625rem;
+        line-height: 1;
+    }
+}
+
 .studio-visit-cta p {
     color: #ffffff;
     font-size: 1.313rem;
@@ -1341,6 +1378,20 @@ screen and (max-width: 375px) {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+    .in-the-studio-slide .slide-image {
+        width: 90%;
+        padding-bottom: 51%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .in-the-studio-slide .slide-image {
+        width: 98%;
+        padding-bottom: 56.5%;
+    }
+}
+
 .in-the-studio-slide .slide-caption {
     font-family: "Lato";
     font-size: 18px;
@@ -1355,6 +1406,15 @@ screen and (max-width: 375px) {
     margin: 0 -25%;
 }
 
+@media screen and (max-width: 480px) {
+    .in-the-studio-slide .slide-caption {
+        visibility: visible;
+    }
+    #in-the-studio-slideshow {
+        margin: 0;
+    }
+}
+
 #in-the-studio-slideshow .slick-active.slick-center .slide-caption {
     visibility: visible;
 }
@@ -1364,6 +1424,12 @@ screen and (max-width: 375px) {
     height: 30px;
     position: absolute;
     bottom: 5.625rem;
+}
+
+@media screen and (max-width: 768px) {
+    .slide-arrows {
+        bottom: 2.625rem;
+    }
 }
 
 .slide-arrows .slide-prev {
