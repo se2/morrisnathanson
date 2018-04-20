@@ -15,7 +15,6 @@ Stylesheet: Global Stylesheet
 }
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
-
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -113,7 +112,6 @@ POSTS & CONTENT STYLES
     background-color: #14679e;
     color: #fefefe;
 }
-
 
 /*********************
 IMAGE GALLERY STYLES
@@ -300,7 +298,6 @@ screen and (min-width: 40em) {
     float: right;
 }
 
-
 /*********************
 PAGE NAVI STYLES
 *********************/
@@ -344,7 +341,8 @@ PAGE NAVI STYLES
     margin-left: 14px;
 }
 
-@media print, screen and (max-width: 480px) {
+@media print,
+screen and (max-width: 480px) {
     .top-bar .menu.secondary-menu .shopping-label {
         display: none;
     }
@@ -365,7 +363,8 @@ PAGE NAVI STYLES
     align-items: flex-end;
 }
 
-@media print, screen and (max-width: 480px) {
+@media print,
+screen and (max-width: 480px) {
     .top-bar {
         height: 100px;
         padding-bottom: 20px;
@@ -388,7 +387,8 @@ PAGE NAVI STYLES
     top: 53px;
 }
 
-@media print, screen and (max-width: 480px) {
+@media print,
+screen and (max-width: 480px) {
     .top-bar-right.top-bar-abs {
         top: 20px;
     }
@@ -461,7 +461,8 @@ div#off-canvas .menu select {
     padding: 0 20px;
 }
 
-@media print, screen and (max-width: 375px) {
+@media print,
+screen and (max-width: 375px) {
     #home-slider .slick-slide {
         padding: 0;
     }
@@ -574,7 +575,6 @@ COMMENT STYLES
     float: right;
 }
 
-
 /*********************
 COMMENT FORM STYLES
 *********************/
@@ -652,7 +652,6 @@ COMMENT FORM STYLES
     margin: 0 20px 1.1em;
 }
 
-
 /*********************
 SIDEBARS & ASIDES
 *********************/
@@ -690,12 +689,39 @@ SIDEBARS & ASIDES
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .page-sidebar {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        height: 50px;
+    }
+    .page-sidebar .terms-list {
+        display: none;
+    }
+    .page-sidebar .terms-select {
+        display: block;
+    }
+}
+
 .page-sidebar__yellow {
     background-color: #ffa409;
 }
 
 .page-sidebar__blue {
     background-color: #1675a9;
+}
+
+.terms-select {
+    display: none;
+    width: auto;
+    height: 40px;
+    float: right;
+    margin: 5px;
+    box-shadow: none;
+    border: none;
 }
 
 .terms-list {
@@ -717,11 +743,13 @@ SIDEBARS & ASIDES
     color: #e63c2e;
 }
 
-.terms-list a {
-    transition: color 300ms;
+.terms-list a,
+.terms-select option {
+    font-family: "Lato";
     color: white;
     font-size: 21px;
     letter-spacing: 0.025em;
+    transition: color 300ms;
 }
 
 /* Gallery Archive */
@@ -738,6 +766,13 @@ SIDEBARS & ASIDES
 .gallery-item {
     padding: 0 10px;
     margin-bottom: 80px;
+}
+
+@media print,
+screen and (max-width: 768px) {
+    .gallery-item {
+        margin-bottom: 40px;
+    }
 }
 
 .galleries-wrapper {
@@ -764,6 +799,16 @@ SIDEBARS & ASIDES
     text-decoration: underline;
 }
 
+@media print,
+screen and (max-width: 768px) {
+    .gallery-sub-section .gallery-notice {
+        width: 50%;
+    }
+    .gallery-container .gallery-grid {
+        width: 100%;
+    }
+}
+
 .gallery-sub-section {
     margin-bottom: 60px;
 }
@@ -785,6 +830,13 @@ SIDEBARS & ASIDES
     left: 0;
     right: 0;
     margin: auto;
+}
+
+@media print,
+screen and (max-width: 480px) {
+    .gallery-bg img {
+        max-width: calc(100% - 40px);
+    }
 }
 
 .gallery-name,
@@ -824,6 +876,8 @@ FOOTER STYLES
     background: #e63c2e;
     color: white;
     padding: 85px 0;
+    position: relative;
+    z-index: 999;
 }
 
 .footer p {
@@ -893,7 +947,6 @@ body#tinymce {
     margin: 20px;
 }
 
-
 /*********************
 PLUGIN STYLES
 *********************/
@@ -903,16 +956,13 @@ PLUGIN STYLES
     margin: 0;
 }
 
-
 /*# sourceMappingURL=style.css.map */
-
 
 /***************************************************
 ****************************************************
 				BEGIN CUSTOM STYLES
 ****************************************************
 ***************************************************/
-
 
 /****************** Global Styles ********************/
 
@@ -988,6 +1038,12 @@ span {
     padding: 3.125rem 0;
 }
 
+@media screen and (max-width: 480px) {
+    .page-title {
+        padding-bottom: 1rem;
+    }
+}
+
 .gray-line {
     border-bottom: 1px solid #dadada;
 }
@@ -1046,6 +1102,12 @@ span {
     position: fixed;
 }
 
+*,
+input,
+button {
+    outline: none !important;
+}
+
 /**************** Video Close Button ****************/
 
 .nivo-lightbox-theme-default .nivo-lightbox-close {
@@ -1061,7 +1123,6 @@ span {
     opacity: 1 !important;
 }
 
-
 /***************** Homepage *******************/
 
 .home-banner {
@@ -1073,13 +1134,15 @@ span {
     color: #ffffff;
 }
 
-@media print, screen and (max-width: 768px) {
+@media print,
+screen and (max-width: 768px) {
     .home-banner .home-banner-text {
         width: 50%;
     }
 }
 
-@media print, screen and (max-width: 480px) {
+@media print,
+screen and (max-width: 480px) {
     .home-banner .home-banner-text {
         width: 100%;
     }
@@ -1101,13 +1164,15 @@ span {
     padding-bottom: 3.125rem;
 }
 
-@media print, screen and (max-width: 480px) {
+@media print,
+screen and (max-width: 480px) {
     .home-headline-large {
         font-size: 6.5rem;
     }
 }
 
-@media print, screen and (max-width: 320px) {
+@media print,
+screen and (max-width: 320px) {
     .home-headline-large {
         font-size: 5.5rem;
         line-height: 1;
@@ -1169,7 +1234,8 @@ a.home-cta {
     margin-bottom: 6rem;
 }
 
-@media print, screen and (max-width: 375px) {
+@media print,
+screen and (max-width: 375px) {
     .home-quote-text-container {
         padding-left: 2.125rem;
         padding-right: 2.125rem;
@@ -1189,7 +1255,6 @@ a.home-cta {
     line-height: 2.75rem;
     color: #e63c2f;
 }
-
 
 /***************** In the Studio *******************/
 
@@ -1496,8 +1561,20 @@ a.share-icon .icon:hover:before {
     margin-bottom: 100px;
 }
 
+@media screen and (max-width: 480px) {
+    .gallery-single-info {
+        margin-bottom: 50px;
+    }
+}
+
 .gallery-single-info .wp-post-image {
     max-width: calc(100% - 80px);
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-single-info .wp-post-image {
+        max-width: 100%;
+    }
 }
 
 .summary p,
@@ -1509,6 +1586,22 @@ a.share-icon .icon:hover:before {
     color: #8a8c8e;
     line-height: 24px;
     letter-spacing: 0.025em;
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-single-info .gallery-single-info--meta {
+        width: 41.6666666667%;
+    }
+    .gallery-single-related .related-posts--grid {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-single-info .gallery-single-info--meta {
+        padding-top: 40px;
+        width: 100%;
+    }
 }
 
 .summary h2,
@@ -1570,11 +1663,8 @@ ul.products {
     display: none;
 }
 
-/* .gallery-bg.gallery-bg_single-product {
-    padding-bottom: 101.525%;
-} */
-
 /* only hide short description in single product page  */
+
 .summary .woocommerce-product-details__short-description {
     display: none;
 }
@@ -1659,7 +1749,6 @@ ul.products {
 .news-link:hover {
     color: #dadada;
 }
-
 
 /**************** Contact Form ******************/
 

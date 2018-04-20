@@ -9,15 +9,14 @@
       </div>
       <div class="cell gallery-sub-section">
         <div class="grid-x pos-rel">
-          <div class="cell medium-6 gallery-subtitle">
+          <div class="cell small-6 medium-6 gallery-subtitle">
             <span>Showcasing the complete archive of original Morris Nathanson artwork.</span>
           </div>
-          <div class="cell medium-3 gallery-notice">
+          <div class="cell small-6 medium-3 gallery-notice">
             <span>
               For orginal artwork purchases/inquiries, please contact gallery respresentative:<br><a href="#" data-open="studio-purchase-modal"><i>Phyllis Van Orden</i></a>
             </span>
           </div>
-          <div class="medium-2 cell nowrap"></div>
         </div>
       </div>
 		</div>
@@ -26,7 +25,7 @@
 	<div class="gallery-container">
 		<div class="grid-container">
 			<div class="grid-x">
-				<div class="small-12 medium-9 cell">
+				<div class="gallery-grid small-12 medium-9 cell">
           <div class="grid-x galleries-wrapper">
             <?php
               $gallery_query = new WP_Query(
@@ -36,11 +35,9 @@
                   'order' => 'ASC'
                   )
                 );
-
               if ($gallery_query->have_posts()) :
                 while ($gallery_query->have_posts()) : $gallery_query->the_post(); ?>
-
-                <div class="gallery-item cell small-12 medium-6 large-4">
+                <div class="gallery-item cell small-6 medium-4 large-4">
                   <a href="<?php the_permalink(); ?>">
                     <div class="gallery-bg">
                       <?php the_post_thumbnail('medium'); ?>
@@ -54,7 +51,6 @@
                     <p><?php the_field('gallery_year'); ?></p>
                   </div>
                 </div>
-
                 <?php endwhile; ?>
               <?php endif; ?>
             </div>
@@ -82,6 +78,14 @@
         </li>
       <?php endforeach; ?>
     </ul>
+    <select class="terms-select" onchange="location = this.value">
+      <option value="/gallery" selected>All artwork</option>
+      <?php foreach ($terms as $key => $term) : ?>
+      <option value="<?php echo get_term_link($term); ?>">
+        <?php echo $term->name; ?>
+      </option>
+      <?php endforeach; ?>
+    </select>
 	</div>
 </div>
 

@@ -15,10 +15,10 @@
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <?php $current_post_id = get_the_ID(); ?>
       <div class="grid-x gallery-single-info">
-        <div class="cell medium-7" style="text-align:center;">
+        <div class="cell small-12 medium-7 gallery-single-info--img" style="text-align:center;">
           <?php the_post_thumbnail('full'); ?>
         </div>
-        <div class="cell medium-3">
+        <div class="cell small-12 medium-3 gallery-single-info--meta">
           <h4 class="gallery-single-title"><?php the_title(); ?></h4>
           <h5 class="gallery-single-field-title">Details</h5>
           <?php the_content(); ?>
@@ -33,8 +33,8 @@
       </div>
       <?php endwhile; endif; ?>
 			<div class="grid-x gallery-single-related">
-        <div class="small-12 medium-12 related-posts">You May Also Like:</div>
-				<div class="small-12 medium-9 cell">
+        <div class="cell small-12 medium-12 related-posts">You May Also Like:</div>
+				<div class="cell small-12 medium-9 related-posts--grid">
           <div class="grid-x galleries-wrapper">
             <?php
               $current_terms = get_the_terms($current_post_id, 'gallery-category');
@@ -53,11 +53,9 @@
                   )
                 )
               );
-
               if ($gallery_query->have_posts()) :
                 while ($gallery_query->have_posts()) : $gallery_query->the_post(); ?>
-
-                <div class="gallery-item cell small-12 medium-6 large-4">
+                <div class="gallery-item cell small-6 medium-4 large-4">
                   <a href="<?php the_permalink(); ?>">
                     <div class="gallery-bg">
                       <?php the_post_thumbnail('medium'); ?>
@@ -71,10 +69,9 @@
                     <p><?php the_field('gallery_year'); ?></p>
                   </div>
                 </div>
-
-                <?php endwhile; ?>
-              <?php endif; ?>
-            </div>
+            <?php endwhile; ?>
+            <?php endif; ?>
+          </div>
 				</div>
 				<?php wp_reset_query(); ?>
 			</div>
@@ -97,6 +94,17 @@
         </li>
       <?php endforeach; ?>
     </ul>
+    <select class="terms-select" onchange="location = this.value">
+      <option value="/gallery">All artwork</option>
+      <?php
+        foreach ($terms as $key => $term):
+          $selected = ($current_terms[0]->term_id == $term->term_id) ? 'selected' : '';
+      ?>
+      <option value="<?php echo get_term_link($term); ?>" <?php echo $selected; ?>>
+        <?php echo $term->name; ?>
+      </option>
+      <?php endforeach; ?>
+    </select>
 	</div>
 </div>
 
