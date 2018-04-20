@@ -28,6 +28,13 @@
 
 				</footer> <!-- end .footer -->
 
+				<div class="reveal" id="studio-contact-modal" data-reveal>
+					<?php echo do_shortcode('[contact-form-7 id="78" title="Contact form 1"]'); ?>
+					<button class="close-button" data-close aria-label="Close modal" type="button">
+						<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+
 			</div>  <!-- end .off-canvas-content -->
 
 		</div> <!-- end .off-canvas-wrapper -->

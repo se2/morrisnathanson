@@ -1152,15 +1152,11 @@ a.home-cta {
     color: #ffffff;
 }
 
-.in-the-studio-slide {
-    width: 553px;
-}
-
 .in-the-studio-slide .slide-image {
-    width: 100%;
-    /* height: 312px; */
+    width: 85%;
     height: 0;
-    padding-bottom: 56.42%;
+    padding-bottom: 48%;
+    margin: 0 auto;
 }
 
 .in-the-studio-slide .slide-caption {
@@ -1170,6 +1166,31 @@ a.home-cta {
     width: 100%;
     text-align: center;
     padding-top: 23px;
+    visibility: hidden;
+    /* position: absolute; */
+}
+
+#in-the-studio-slideshow {
+    margin: 0 -25%;
+}
+
+#in-the-studio-slideshow .slick-active.slick-center .slide-caption {
+    visibility: visible;
+}
+
+.slide-arrows {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 5.625rem;
+}
+
+.slide-arrows .slide-prev {
+    left: 5vw;
+}
+
+.slide-arrows .slide-next {
+    right: 5vw;
 }
 
 /***************** Press & Events *******************/

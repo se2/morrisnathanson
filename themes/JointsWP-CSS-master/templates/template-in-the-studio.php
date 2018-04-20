@@ -72,17 +72,21 @@ get_header(); ?>
 </div>
 
 <!-- In Progress Slider -->
-<div class="background-image studio-progress-container" style="background-image: url('<?php the_field('studio_progress_background_image'); ?>');">
+<div class="background-image studio-progress-container pos-rel" style="background-image: url('<?php the_field('studio_progress_background_image'); ?>');">
 	<div class="slideshow-wrapper" id="in-the-studio-slideshow">
 		<?php
 			$slides = get_field('slideshow');
 			foreach ($slides as $key => $slide) :
 		?>
-		<div class="in-the-studio-slide">
+		<div class="in-the-studio-slide pos-rel">
 			<div class="slide-image bg-cover" style="background-image:url('<?php echo $slide['slide_image']; ?>');"></div>
 			<div class="slide-caption"><?php echo $slide['slide_caption']; ?></div>
 		</div>
 		<?php endforeach; ?>
+	</div>
+	<div class="slide-arrows" id="in-the-studio-arrows">
+		<div class="slide-arrow slide-prev slick-arrow" style="display: block;"></div>
+		<div class="slide-arrow slide-next slick-arrow" style="display: block;"></div>
 	</div>
 </div>
 
@@ -101,14 +105,6 @@ get_header(); ?>
 					<div class="studio-visit-button outline-button" data-open="studio-contact-modal">
 						<?php the_field('studio_visit_cta_text'); ?>
 					</div>
-				</div>
-
-				<div class="reveal" id="studio-contact-modal" data-reveal>
-					<?php echo do_shortcode('[contact-form-7 id="78" title="Contact form 1"]'); ?>
-
-					<button class="close-button" data-close aria-label="Close modal" type="button">
-						<span aria-hidden="true">&times;</span>
-				    </button>
 				</div>
 
 			</div>

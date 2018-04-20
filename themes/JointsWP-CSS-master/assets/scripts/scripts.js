@@ -5,7 +5,7 @@ and Foundation play nice together.
 */
 jQuery(document).ready(function () { // Remove empty P tags created by WP inside of Accordion and Orbit
     jQuery('.accordion p:empty, .orbit p:empty').remove(); // Adds Flex Video to YouTube and Vimeo Embeds
-    jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function () { if (jQuery(this).innerWidth() / jQuery(this).innerHeight() > 1.5) { jQuery(this).wrap("<div class='widescreen responsive-embed'/>"); } else { jQuery(this).wrap("<div class='responsive-embed'/>"); } });
+    // jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function () { if (jQuery(this).innerWidth() / jQuery(this).innerHeight() > 1.5) { jQuery(this).wrap("<div class='widescreen responsive-embed'/>"); } else { jQuery(this).wrap("<div class='responsive-embed'/>"); } });
     jQuery('#home-slider').slick({
         infinite: true,
         slidesToShow: 3,
@@ -34,13 +34,16 @@ jQuery(document).ready(function () { // Remove empty P tags created by WP inside
     jQuery('#in-the-studio-slideshow').slick({
         infinite: true,
         centerMode: true,
-        centerPadding: '30px',
         slidesToShow: 3,
         slidesToScroll: 1,
-        arrows: true,
-        nextArrow: "<div class='slide-arrow slide-next'></div>",
-        prevArrow: "<div class='slide-arrow slide-prev'></div>",
+        arrows: false,
         speed: 900
+    });
+    jQuery('#in-the-studio-arrows .slide-next').click(function() {
+        jQuery('#in-the-studio-slideshow').slick('slickNext');
+    });
+    jQuery('#in-the-studio-arrows .slide-prev').click(function() {
+        jQuery('#in-the-studio-slideshow').slick('slickPrev');
     });
 });
 
