@@ -109,4 +109,8 @@ jQuery(document).ready(function () {
             jQuery(".page-sidebar").removeClass("pos-fixed");
         }
     }); //missing );
+
+    function scrollToOffset(target, offset) {
+        jQuery('html,body').animate({scrollTop: (target.top) - offset}, 1000);
+    }
 });

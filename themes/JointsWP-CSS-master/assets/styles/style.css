@@ -433,7 +433,7 @@ header.header {
 
 div#off-canvas {
     box-shadow: none;
-    background: #ffa409;
+    background: #e63c2e;
     padding: 50px;
 }
 
@@ -443,7 +443,7 @@ div#off-canvas .menu li {
 
 div#off-canvas .menu li.active a {
     background: transparent;
-    color: #e63c2e;
+    color: #0a0a0a;
 }
 
 div#off-canvas .menu a,
@@ -489,6 +489,15 @@ screen and (max-width: 375px) {
     left: -52px;
     border-width: 15px 26px 15px 0;
     border-color: transparent #e5e5e6 transparent transparent;
+}
+
+@media screen and (max-width: 1024px) {
+    .slide-prev {
+        left: -12px;
+    }
+    .slide-next {
+        right: -12px;
+    }
 }
 
 /*********************
@@ -719,7 +728,7 @@ SIDEBARS & ASIDES
     display: none;
     width: auto;
     height: 40px;
-    margin: 5px;
+    margin: 5px .9375rem;
     box-shadow: none;
     border: none;
 }
@@ -1289,11 +1298,23 @@ screen and (max-width: 375px) {
 
 @media screen and (max-width: 480px) {
     .studio-related-video-link {
+        padding: 0;
         margin-bottom: 40px;
     }
     .studio-related-video-link img {
         width: 100%;
         max-width: 100%;
+    }
+    .flex-video embed,
+    .flex-video iframe,
+    .flex-video object,
+    .flex-video video,
+    .responsive-embed embed,
+    .responsive-embed iframe,
+    .responsive-embed object,
+    .responsive-embed video {
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
     }
 }
 
@@ -1394,7 +1415,7 @@ screen and (max-width: 375px) {
 
 @media screen and (max-width: 480px) {
     .in-the-studio-slide .slide-image {
-        width: 98%;
+        width: calc(100% - 1.25rem);
         padding-bottom: 56.5%;
     }
 }
@@ -1554,6 +1575,14 @@ a.share-icon .icon:hover:before {
     margin-left: 20px;
 }
 
+@media screen and (max-width: 480px) {
+    .story-date {
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
 .post-content .content-column,
 .post-content p {
     font-family: 'Lato';
@@ -1575,8 +1604,21 @@ a.share-icon .icon:hover:before {
 }
 
 .story-item {
+    padding-top: 30px;
     padding-bottom: 80px;
-    margin-bottom: 30px;
+}
+
+.story-left-content {
+    margin-top: -30px;
+}
+
+@media screen and (max-width: 768px) {
+    .story-item {
+        padding-top: 50px;
+    }
+    .story-left-content {
+        margin-top: -50px;
+    }
 }
 
 .story-left-content .story-item:last-child {

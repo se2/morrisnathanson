@@ -91,6 +91,13 @@
 				</li>
 			<?php endforeach; ?>
 		</ul>
+		<select class="terms-select" onchange="location = this.value">
+      <?php foreach ($terms as $key => $term) : ?>
+      <option value="#<?php echo $term->slug; ?>">
+        <?php echo $term->name; ?>
+      </option>
+      <?php endforeach; ?>
+    </select>
 	</div>
 </div>
 

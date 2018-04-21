@@ -10,7 +10,7 @@ get_header(); ?>
 	<div class="grid-container">
 		<div class="grid-x">
 			<div class="cell">
-				<h1 class="page-title"><?php echo get_the_title(); ?></h1>
+				<h1 class="page-title">Stories</h1>
 			</div>
 		</div>
 	</div>
@@ -27,10 +27,12 @@ get_header(); ?>
 								'order' => 'ASC'
 								)
 							);
-
 						if ($story_query->have_posts()) :
-							while ($story_query->have_posts()) : $story_query->the_post(); ?>
-							<div class="grid-x story-item gray-line">
+							while ($story_query->have_posts()) : $story_query->the_post();
+								$current_post_id = get_the_ID();
+								$current_terms = get_the_terms($current_post_id, 'story-category');
+					?>
+							<div class="grid-x story-item gray-line" id="<?php echo $current_terms[0]->slug; ?>">
 								<!-- Title -->
 								<div class="small-12 medium-12 cell story-title-section">
 									<div class="post-title">
@@ -72,7 +74,6 @@ get_header(); ?>
 								<div class="small-12 medium-12 cell bg-cover story-cover-1" style="background-image:url('<?php the_field('horitonzal_image_2'); ?>');"></div>
 								<?php endif; ?>
 							</div>
-
 							<?php endwhile; ?>
 						<?php endif; ?>
 				</div>
@@ -87,16 +88,23 @@ get_header(); ?>
 				$terms = get_terms(
 					array(
 						'taxonomy' => 'story-category',
-						// 'hide_empty' => false,
 						'order' => 'DESC'
 				) );
 				foreach ($terms as $key => $term) : ?>
 				<li class="term-item">
-					<a href="#"><?php echo $term->name; ?></a>
+					<a href="#<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
 				</li>
 			<?php endforeach; ?>
 		</ul>
+		<select class="terms-select" onchange="location = this.value">
+      <?php foreach ($terms as $key => $term) : ?>
+      <option value="#<?php echo $term->slug; ?>">
+        <?php echo $term->name; ?>
+      </option>
+      <?php endforeach; ?>
+    </select>
 	</div>
 </div>
 
 <?php get_footer(); ?>
+
