@@ -48,9 +48,17 @@ switch ( $template ) {
 		echo '</main></div>';
 		break;
 	default :
-		global $wp_query;
-		$terms_list = '<ul class="terms-list"><a href="/shop" class="gallery-all">Shop all Prints</a>';
-		$current_product_cat = $wp_query->get_queried_object()->term_id;
+		global $wp_query, $post;
+		$current_product_cat = -1;
+		if (is_single()) {
+			$current_terms = get_the_terms($post->ID, 'product_cat');
+			$current_product_cat = $current_terms[0]->term_id;
+		} else {
+			$current_product_cat = $wp_query->get_queried_object()->term_id;
+		}
+		$shop_all_label = 'Shop all Prints';
+		$terms_list = '<ul class="terms-list"><a href="/shop" class="gallery-all">' . $shop_all_label . '</a>';
+
 		$terms = get_terms(
 			array(
 				'taxonomy' 		=> 'product_cat',
@@ -62,6 +70,12 @@ switch ( $template ) {
 			$terms_list .= '<li class="term-item ' . $active_class . '"><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
 		endforeach;
 		$terms_list .= '</ul>';
+		$terms_list .= '<select class="terms-select" onchange="location = this.value"><option value="/shop" selected>' . $shop_all_label . '</option>';
+		foreach ($terms as $key => $term):
+			$selected = ($current_product_cat == $term->term_id) ? 'selected' : '';
+			$terms_list .= '<option value="' . get_term_link($term) . '" ' . $selected . '>' . $term->name . '</option>';
+		endforeach;
+		$terms_list .= '</select>';
 		echo '</div><div class="page-sidebar page-sidebar__blue">' . $terms_list . '</div></main></div>';
 		break;
 }

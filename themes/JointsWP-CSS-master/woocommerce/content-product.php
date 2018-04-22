@@ -28,6 +28,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 
 $classes[] = 'medium-4';
+$classes[] = 'small-6';
 $classes[] = 'gallery-item';
 $classes[] = 'pos-rel';
 
