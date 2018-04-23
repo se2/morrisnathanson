@@ -1886,7 +1886,9 @@ ul.products {
 }
 
 .checkout-button:hover,
-.single_add_to_cart_button:hover {
+.single_add_to_cart_button:hover,
+#place_order:hover {
+    color: white;
     background-color: #e63c2e;
     border-color: #e63c2e;
 }
@@ -2094,8 +2096,22 @@ ul.products {
     width: 15.5%;
 }
 
+@media screen and (max-width: 480px) {
+    .checkout td.product-total,
+    .checkout tr.cart-subtotal td,
+    .checkout tr.order-total td {
+        width: 33.333333%;
+    }
+}
+
 #customer_details {
     width: 77%;
+}
+
+@media screen and (max-width: 1023px) {
+    #customer_details {
+        width: 100%;
+    }
 }
 
 .select2-results__option[aria-selected],
@@ -2164,6 +2180,12 @@ form.checkout.woocommerce-checkout textarea {
     transform: translateY(-50%);
 }
 
+@media screen and (max-width: 480px) {
+    .select2-container--default .select2-selection--single .select2-selection__arrow b {
+        right: 15px;
+    }
+}
+
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
     border-width: 0 9px 16px 9px;
     border-color: transparent transparent #e6e7e8 transparent;
@@ -2179,6 +2201,17 @@ ul.wc_payment_methods {
     list-style-type: none;
     margin-left: 0;
     width: 50%;
+}
+
+@media screen and (max-width: 480px) {
+    ul.wc_payment_methods {
+        width: 100%;
+    }
+    #place_order {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 ul.wc_payment_methods label {
