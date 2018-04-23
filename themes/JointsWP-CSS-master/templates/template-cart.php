@@ -18,7 +18,7 @@ get_header(); ?>
 		<div class="grid-container">
 			<div class="grid-x">
 				<div class="small-12 medium-12 large-12 cell">
-          <div class="grid-x galleries-wrapper">
+          <div class="grid-x">
             <?php the_content(); ?>
           </div>
 				</div>

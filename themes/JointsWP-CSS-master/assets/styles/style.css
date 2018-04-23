@@ -1943,8 +1943,11 @@ ul.products {
     top: 30px;
 }
 
+.cart-wrapper .product-name a {
+    color: #e63c2e;
+}
+
 .cart-wrapper .product-thumbnail img {
-    /* max-width: 245px; */
     max-height: 166px;
     width: auto;
 }
@@ -1984,7 +1987,7 @@ ul.products {
     font-family: "Lato";
     font-size: 30px;
     font-weight: lighter;
-    color:black;
+    color: black;
     margin-bottom: 28px;
     margin-top: 50px;
     line-height: 1;
@@ -2001,6 +2004,74 @@ ul.products {
 .wc-proceed-to-checkout {
     text-align: right;
 }
+
+/* Responsive Cart */
+
+@media only screen and (max-width: 600px) {
+    .cart-wrapper .product-name:after,
+    .cart-wrapper .product-price:after,
+    .cart-wrapper .product-quantity:after,
+    .cart-wrapper .product-thumbnail:after {
+        content: none;
+    }
+    .woocommerce table.shop_table_responsive.cart thead,
+    .woocommerce-page table.shop_table_responsive.cart thead {
+        display: none;
+    }
+    .woocommerce table.shop_table_responsive.cart tr,
+    .woocommerce-page table.shop_table_responsive.cart tr {
+        display: block;
+    }
+    .cart_totals table.shop_table tbody td,
+    .cart_totals table.shop_table tbody th {
+        width: auto;
+    }
+    .woocommerce table.shop_table_responsive.cart tbody tr:first-child td:first-child,
+    .woocommerce-page table.shop_table_responsive.cart tbody tr:first-child td:first-child {
+        border-top: 0;
+    }
+    .woocommerce table.shop_table_responsive.cart tr td,
+    .woocommerce-page table.shop_table_responsive.cart tr td {
+        display: block;
+        text-align: right !important;
+    }
+    .woocommerce table.shop_table_responsive.cart tr td::before,
+    .woocommerce-page table.shop_table_responsive.cart tr td::before {
+        content: attr(data-title);
+        font-weight: 700;
+        float: left;
+        font-family: "Lato";
+    }
+    .cart-wrapper .product-thumbnail img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+    .cart-wrapper table.shop_table.cart tbody td {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ebebec;
+    }
+    .cart-wrapper td.actions button {
+        width: 100%;
+    }
+    .cart-wrapper table.shop_table.cart tbody td.actions {
+        background: transparent;
+    }
+    .wcppec-checkout-buttons.woo_pp_cart_buttons_div, .wc-proceed-to-checkout {
+        text-align: center;
+    }
+    .checkout-button {
+        padding: 12px;
+        width: 100%;
+    }
+    .cart-wrapper .product-remove a, .cart-wrapper .product-remove img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Responsive Cart */
 
 /*************** News Classes (shared between Homepage and Press & Events pages) ****************/
 
