@@ -1055,6 +1055,7 @@ p {
     padding: 3.125rem 0;
 }
 
+.single-product .page-title,
 .archive .page-title {
     padding-top: 5.125rem;
 }
