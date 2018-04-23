@@ -94,7 +94,7 @@
       <?php endforeach; ?>
     </ul>
     <select class="terms-select" onchange="location = this.value">
-      <option value="/gallery">All artwork</option>
+      <option value="<?php echo get_site_url(); ?>/gallery">All artwork</option>
       <?php
         foreach ($terms as $key => $term):
           $selected = ($current_cate == $term->term_id) ? 'selected' : '';

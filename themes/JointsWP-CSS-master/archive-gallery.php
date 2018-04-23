@@ -89,7 +89,7 @@
       <?php endforeach; ?>
     </ul>
     <select class="terms-select" onchange="location = this.value">
-      <option value="/gallery" selected>All artwork</option>
+      <option value="<?php echo get_site_url(); ?>/gallery" selected>All artwork</option>
       <?php foreach ($terms as $key => $term) : ?>
       <option value="<?php echo get_term_link($term); ?>">
         <?php echo $term->name; ?>
