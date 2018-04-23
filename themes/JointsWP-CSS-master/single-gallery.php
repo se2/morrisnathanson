@@ -88,8 +88,10 @@
             'hide_empty' => false,
             'order' => 'DESC'
         ) );
-        foreach ($terms as $key => $term) : ?>
-        <li class="term-item">
+        foreach ($terms as $key => $term) :
+          $selected = ($current_terms[0]->term_id == $term->term_id) ? 'term-active__red' : '';
+        ?>
+        <li class="term-item <?php echo $selected; ?>">
           <a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a>
         </li>
       <?php endforeach; ?>

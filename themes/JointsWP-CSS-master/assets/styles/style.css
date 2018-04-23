@@ -2237,6 +2237,63 @@ ul.wc_payment_methods label {
 
 /* End Woocommerce Checkout Style */
 
+/* Custom Pagination Styling */
+
+.custom-pagination {
+    position: relative;
+    margin-bottom: 70px;
+    text-align: right;
+}
+
+.custom-pagination .page-numbers {
+    font-size: 18px;
+    color: black;
+    padding: 0 9px;
+}
+
+.custom-pagination .page-numbers.current {
+    line-height: 26px;
+    width: 26px;
+    height: 26px;
+    background-color: #e63c2e;
+    border-radius: 50%;
+    color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+.prev.page-numbers,
+.next.page-numbers {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.prev.page-numbers {
+    position: absolute;
+    left: 0;
+}
+
+.icon-pagi-arrow__reverse {
+    display: inline-block;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 600px) {
+    .custom-pagination {
+        text-align: center;
+    }
+    .next.page-numbers {
+        position: absolute;
+        right: 0;
+    }
+}
+
+/* End Custom Pagination Styling */
+
 /*************** News Classes (shared between Homepage and Press & Events pages) ****************/
 
 .news-image {

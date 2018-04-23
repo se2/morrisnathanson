@@ -28,11 +28,14 @@
 				<div class="gallery-grid small-12 medium-9 cell">
           <div class="grid-x galleries-wrapper">
             <?php
+              $default_posts_per_page = get_option( 'posts_per_page' );
+              $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
               $gallery_query = new WP_Query(
                 array(
                   'post_type' => 'gallery',
                   'orderby' => 'post_date',
-                  'order' => 'ASC'
+                  'order' => 'ASC',
+                  'paged' => $paged
                   )
                 );
               if ($gallery_query->have_posts()) :
@@ -53,6 +56,13 @@
                 </div>
                 <?php endwhile; ?>
               <?php endif; ?>
+            </div>
+            <div>
+              <?php
+                if (function_exists('mn_custom_pagination')) {
+                  mn_custom_pagination($gallery_query->max_num_pages, "", $paged);
+                }
+              ?>
             </div>
 				</div>
 				<?php wp_reset_query(); ?>
