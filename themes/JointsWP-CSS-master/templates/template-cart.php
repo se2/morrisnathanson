@@ -25,7 +25,7 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-	<div class="page-sidebar page-sidebar__blue"></div>
+	<!-- <div class="page-sidebar page-sidebar__blue"></div> -->
 </div>
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>

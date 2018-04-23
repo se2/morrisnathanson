@@ -493,10 +493,10 @@ screen and (max-width: 375px) {
 
 @media screen and (max-width: 1024px) {
     .slide-prev {
-        left: -12px;
+        left: 0;
     }
     .slide-next {
-        right: -12px;
+        right: 0;
     }
 }
 
@@ -1053,6 +1053,10 @@ p {
     color: #e63c2f;
     font-size: 5.625rem;
     padding: 3.125rem 0;
+}
+
+.archive .page-title {
+    padding-top: 5.125rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -1939,6 +1943,7 @@ ul.products {
     margin-bottom: 40px;
 }
 
+.button.wc-backward,
 .checkout-button,
 .single_add_to_cart_button,
 #place_order {
@@ -1952,6 +1957,7 @@ ul.products {
     transition: all 300ms;
 }
 
+.button.wc-backward:hover,
 .checkout-button:hover,
 .single_add_to_cart_button:hover,
 #place_order:hover {
@@ -1964,12 +1970,11 @@ ul.products {
     margin-bottom: 0;
 }
 
-/* Woocommerce Cart Page Style */
-
-.woocommerce-cart .page-sidebar,
-.cart-wrapper .page-sidebar {
-    display: none;
+.cart-wrapper {
+    padding-bottom: 5.125rem;
 }
+
+/* Woocommerce Cart Page Style */
 
 .cart-wrapper .woocommerce {
     width: 100%;
@@ -2042,6 +2047,8 @@ ul.products {
 }
 
 .cart-wrapper table.shop_table.cart tbody td.actions {
+    /* hide temporarily by css */
+    display: none;
     padding: 0;
     text-align: right;
     background: #ebebec;
@@ -2282,7 +2289,16 @@ form.checkout.woocommerce-checkout textarea {
 ul.wc_payment_methods {
     list-style-type: none;
     margin-left: 0;
-    width: 50%;
+    width: 100%;
+}
+
+ul.wc_payment_methods input[type="radio"] {
+    height: auto;
+    margin-right: 15px;
+}
+
+a.about_paypal {
+    margin-left: 15px;
 }
 
 @media screen and (max-width: 600px) {
@@ -2293,6 +2309,9 @@ ul.wc_payment_methods {
         width: 100%;
         padding-left: 15px;
         padding-right: 15px;
+    }
+    a.about_paypal {
+        margin: 0;
     }
 }
 
