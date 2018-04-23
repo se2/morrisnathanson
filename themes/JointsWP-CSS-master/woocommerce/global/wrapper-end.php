@@ -70,7 +70,7 @@ switch ( $template ) {
 			$terms_list .= '<li class="term-item ' . $active_class . '"><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
 		endforeach;
 		$terms_list .= '</ul>';
-		$terms_list .= '<select class="terms-select" onchange="location = this.value"><option value="/shop" selected>' . $shop_all_label . '</option>';
+		$terms_list .= '<select class="terms-select" onchange="location = this.value"><option value="' . get_site_url() . '/shop" selected>' . $shop_all_label . '</option>';
 		foreach ($terms as $key => $term):
 			$selected = ($current_product_cat == $term->term_id) ? 'selected' : '';
 			$terms_list .= '<option value="' . get_term_link($term) . '" ' . $selected . '>' . $term->name . '</option>';
