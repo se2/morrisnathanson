@@ -98,5 +98,11 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
+<div class="grid-container">
+	<div class="small-12 cell home-quote-text-container__responsive">
+		<p class="quote-text"><?php the_field('home_quote_text'); ?></p>
+		<p class="quote-author">–M.N.</p>
+	</div>
+</div>
 
 <?php get_footer(); ?>

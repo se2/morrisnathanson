@@ -1300,11 +1300,31 @@ a.home-cta {
     margin-bottom: 6rem;
 }
 
+.home-quote-text-container__responsive {
+    display: none;
+    padding-top: 25px;
+}
+
+@media screen and (max-width: 1024px) {
+    .home-quote-container {
+        background-position: 30% top;
+    }
+}
+
 @media print,
-screen and (max-width: 375px) {
+screen and (max-width: 768px) {
+    .home-quote-container {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        background-position: left top;
+        margin-top: 50px;
+    }
     .home-quote-text-container {
-        padding-left: 2.125rem;
-        padding-right: 2.125rem;
+        display: none;
+    }
+    .home-quote-text-container__responsive {
+        display: block;
     }
 }
 
