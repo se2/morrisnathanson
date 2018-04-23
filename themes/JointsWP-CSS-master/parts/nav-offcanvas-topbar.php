@@ -27,7 +27,7 @@
 					<a href="#" data-open="studio-general-modal">Contact</a>
 				</li>
 				<li>
-					<a href="/cart"><span class="shopping-label">Shopping Cart</span><span class="icon-bag"></span></a>
+					<a href="<?php echo get_site_url(); ?>/cart"><span class="shopping-label">Shopping Cart</span><span class="icon-bag"></span></a>
 				</li>
 			</ul>
 		</div>
