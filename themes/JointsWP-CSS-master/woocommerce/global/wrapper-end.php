@@ -57,7 +57,7 @@ switch ( $template ) {
 			$current_product_cat = $wp_query->get_queried_object()->term_id;
 		}
 		$shop_all_label = 'Shop all Prints';
-		$terms_list = '<ul class="terms-list"><a href="/shop" class="gallery-all">' . $shop_all_label . '</a>';
+		$terms_list = '<ul class="terms-list"><a href="' . get_site_url() . '/shop" class="gallery-all">' . $shop_all_label . '</a>';
 
 		$terms = get_terms(
 			array(

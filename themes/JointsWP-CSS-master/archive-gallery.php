@@ -73,7 +73,7 @@
 	<div class="page-sidebar page-sidebar__yellow">
     <ul class="terms-list">
       <li>
-        <a href="/gallery" class="gallery-all">All artwork</a>
+        <a href="<?php echo get_site_url(); ?>/gallery" class="gallery-all">All artwork</a>
       </li>
       <?php
         $terms = get_terms(

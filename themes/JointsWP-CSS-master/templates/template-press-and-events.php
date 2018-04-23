@@ -41,7 +41,7 @@ get_header(); ?>
 								<a class="share-icon" href="http://www.facebook.com/sharer.php?u=<?php echo the_field('news_article_url'); ?>&amp;t=<?php the_title(); ?>" title="Share on Facebook." target="_blank">
 									<span class="icon icon-facebook"></span>
 								</a>
-								<a class="share-icon" href="/feed/?post_type=news-article" title="RSS Feed" target="_blank">
+								<a class="share-icon" href="<?php echo get_site_url(); ?>/feed/?post_type=news-article" title="RSS Feed" target="_blank">
 									<span class="icon icon-rss"></span>
 								</a>
 								<a class="share-icon" href="http://twitter.com/home/?status=<?php the_title(); ?> - <?php the_field('news_article_url'); ?>" title="Tweet this!" target="_blank">
