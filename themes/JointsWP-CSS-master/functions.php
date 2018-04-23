@@ -227,7 +227,7 @@ add_action('woocommerce_after_shop_loop_item','mn_replace_add_to_cart');
 function mn_replace_add_to_cart() {
 	global $product;
 	$link = $product->add_to_cart_url();
-	echo '<a class="add-to-cart__custom" href="' . esc_attr($link) . '" ><span class="icon-bag"></span></a>';
+	echo '<a class="add-to-cart__custom" href="' . esc_attr($link) . '" ><span class="icon icon-bag-outline"><span class="icon path1"></span><span class="icon path2"></span></span></a>';
 }
 
 /**
@@ -268,6 +268,12 @@ add_filter('woocommerce_product_description_heading', 'mn_product_description_he
 
 function mn_product_description_heading() {
 	return __('Details', 'woocommerce');
+}
+
+add_filter( 'woocommerce_order_button_text', 'mn_woo_custom_order_button_text' );
+
+function mn_woo_custom_order_button_text() {
+    return __( 'Place order »', 'woocommerce' );
 }
 
 /**
