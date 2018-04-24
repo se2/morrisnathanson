@@ -984,6 +984,11 @@ PLUGIN STYLES
 
 /****************** Global Styles ********************/
 
+html,
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
 a[x-apple-data-detectors],
 a[href^="tel"] {
     color: inherit !important;
@@ -1299,7 +1304,7 @@ a.home-cta {
 }
 
 .home-quote-text-container {
-    background: rgb(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.75);
     padding: 0 3.125rem 3.125rem 3.125rem;
     margin-top: 6rem;
     margin-bottom: 6rem;
@@ -1944,6 +1949,7 @@ ul.products {
     margin-bottom: 40px;
 }
 
+form.woocommerce-form-login button,
 .button.wc-backward,
 .button.wc-forward,
 .checkout-button,
@@ -1959,6 +1965,7 @@ ul.products {
     transition: all 300ms;
 }
 
+form.woocommerce-form-login button:hover,
 .button.wc-forward:hover,
 .button.wc-backward:hover,
 .checkout-button:hover,
@@ -2220,10 +2227,12 @@ ul.order_details,
 
 .select2-results__option[aria-selected],
 .select2-results__option[data-selected],
-form.checkout.woocommerce-checkout input,
 .select2-container--default .select2-search--dropdown .select2-search__field,
 form.checkout label,
+form.checkout.woocommerce-checkout input,
 form.checkout.woocommerce-checkout textarea,
+form.woocommerce-form-login input,
+form.woocommerce-form-login textarea,
 .select2-container--default .select2-selection--single .select2-selection__rendered {
     font-style: italic;
     font-size: 16px;
@@ -2233,6 +2242,8 @@ form.checkout.woocommerce-checkout textarea,
 .select2-results__option[aria-selected],
 .select2-results__option[data-selected],
 .select2-container--default .select2-search--dropdown .select2-search__field,
+form.woocommerce-form-login input,
+form.woocommerce-form-login textarea,
 form.checkout.woocommerce-checkout input,
 form.checkout.woocommerce-checkout textarea {
     box-shadow: none;
@@ -2312,9 +2323,10 @@ ul.wc_payment_methods {
     width: 100%;
 }
 
-ul.wc_payment_methods input[type="radio"] {
+.woocommerce form input[type="radio"],
+.woocommerce form input[type="checkbox"] {
     height: auto;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 a.about_paypal {
@@ -2339,6 +2351,20 @@ ul.wc_payment_methods label {
     font-style: normal;
     color: #e63c2e;
     margin-left: 0;
+}
+
+.woocommerce-info,
+.woocommerce-form-login {
+    width: 77%;
+}
+
+.woocommerce-form-login a,
+.woocommerce-info a {
+    color: #e63c2e;
+}
+
+.woocommerce-info {
+    margin-bottom: 25px;
 }
 
 /* End Woocommerce Checkout Style */
