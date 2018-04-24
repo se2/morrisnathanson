@@ -1,14 +1,14 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Morris Nathanson",
+    "short_name": "Morris Nathanson",
     "icons": [
         {
-            "src": "/morrisnathanson/wp-content/uploads/fbrfg/android-chrome-192x192.png",
+            "src": "/wp-content/uploads/fbrfg/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/morrisnathanson/wp-content/uploads/fbrfg/android-chrome-256x256.png",
+            "src": "/wp-content/uploads/fbrfg/android-chrome-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         }
