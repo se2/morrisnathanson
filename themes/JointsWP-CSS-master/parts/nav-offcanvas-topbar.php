@@ -27,7 +27,10 @@
 					<a href="#" data-open="studio-general-modal">Contact</a>
 				</li>
 				<li>
-					<a href="<?php echo get_site_url(); ?>/cart"><span class="shopping-label">Shopping Cart</span><span class="icon-bag"></span></a>
+					<a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+						<span class="shopping-label">Shopping Cart</span><span class="icon-bag"></span>
+						<?php echo ( WC()->cart->get_cart_contents_count() > 0 ) ? '<span class="cart-total">' . WC()->cart->get_cart_contents_count() . '</span>' : ''; ?>
+					</a>
 				</li>
 			</ul>
 		</div>

@@ -293,8 +293,24 @@ add_action('woocommerce_after_shop_loop_item','mn_replace_add_to_cart');
 
 function mn_replace_add_to_cart() {
 	global $product;
+	$product_id = $product->get_id();
 	$link = $product->add_to_cart_url();
-	echo '<a class="add-to-cart__custom" href="' . esc_attr($link) . '" ><span class="icon icon-bag-outline"><span class="icon path1"></span><span class="icon path2"></span></span></a>';
+	echo ( woo_in_cart( $product_id ) ) ? '<a class="add-to-cart__custom" href="' . esc_attr($link) . '" ><span class="icon icon-bag icon__red"></span></a>' : '<a class="add-to-cart__custom" href="' . esc_attr($link) . '" ><span class="icon icon-bag-outline"><span class="icon path1"></span><span class="icon path2"></span></span></a>';
+}
+
+// Ensure cart contents update when products are added to the cart via AJAX
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	ob_start();
+	?>
+	<a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+		<span class="shopping-label">Shopping Cart</span><span class="icon-bag"></span>
+		<?php echo ( WC()->cart->get_cart_contents_count() > 0 ) ? '<span class="cart-total">' . WC()->cart->get_cart_contents_count() . '</span>' : ''; ?>
+	</a>
+	<?php
+	$fragments['a.cart-contents'] = ob_get_clean();
+	return $fragments;
 }
 
 /**
@@ -341,6 +357,17 @@ add_filter( 'woocommerce_order_button_text', 'mn_woo_custom_order_button_text' )
 
 function mn_woo_custom_order_button_text() {
     return __( 'Place order »', 'woocommerce' );
+}
+
+function woo_in_cart($product_id) {
+	global $woocommerce;
+	foreach($woocommerce->cart->get_cart() as $key => $val ) {
+			$_product = $val['data'];
+			if($product_id == $_product->id ) {
+					return true;
+			}
+	}
+	return false;
 }
 
 /**
