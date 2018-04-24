@@ -15,10 +15,10 @@
 				</li>
 			</ul>
 		</div>
-		<div class="top-bar-right show-for-medium menu-wrapper">
+		<div class="top-bar-right menu-wrapper menu-desktop">
 			<?php joints_top_nav(); ?>
 		</div>
-		<div class="title-bar hamburger-menu show-for-small-only" data-toggle="off-canvas" data-hide-for="medium">
+		<div class="title-bar hamburger-menu" data-toggle="off-canvas" data-hide-for="medium">
 			<button class="menu-icon" type="button" data-toggle></button>
 		</div>
 		<div class="top-bar-right top-bar-abs">

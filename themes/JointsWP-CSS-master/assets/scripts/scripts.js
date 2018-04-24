@@ -98,10 +98,10 @@ jQuery(document).ready(function () {
             }
         });
     jQuery(window).scroll(function () {
-        let deviceWidth = jQuery(window).outerWidth();
-        let tabletWidth = 768;
+        var deviceWidth = jQuery('html').outerWidth();
+        var tabletWidth = 768;
         var scroll = jQuery(window).scrollTop();
-        let headerHeight = (deviceWidth >= tabletWidth) ? 158 : 100;
+        var headerHeight = (deviceWidth >= tabletWidth) ? 158 : 100;
         if (scroll >= headerHeight) {
             jQuery(".page-sidebar").addClass("pos-fixed");
         }
@@ -110,7 +110,7 @@ jQuery(document).ready(function () {
         }
     }); //missing );
 
-    function scrollToOffset(target, offset) {
-        jQuery('html,body').animate({scrollTop: (target.top) - offset}, 1000);
-    }
+    // function scrollToOffset(target, offset) {
+    //     jQuery('html,body').animate({ scrollTop: (target.top) - offset }, 1000);
+    // }
 });

@@ -336,7 +336,9 @@ PAGE NAVI STYLES
     font-size: 14px;
     color: #e63c2e;
     display: flex;
+    display: -webkit-flex;
     align-items: center;
+    -webkit-align-items: center;
     min-height: 23px;
     margin-left: 14px;
 }
@@ -360,7 +362,9 @@ screen and (max-width: 600px) {
     height: 158px;
     padding: 0 0 40px;
     display: flex;
+    display: -webkit-flex;
     align-items: flex-end;
+    -webkit-align-items: flex-end;
 }
 
 @media print,
@@ -420,6 +424,17 @@ header.header {
     background: transparent;
     padding-left: 0;
     padding-right: 0;
+    bottom: 20px;
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .menu-desktop {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
 }
 
 .hamburger-menu .menu-icon {
@@ -1873,12 +1888,15 @@ ul.products {
     background: white;
     border-radius: 50%;
     display: flex;
+    display: -webkit-flex;
     position: absolute;
     top: 14px;
     z-index: 999;
     right: 24px;
     align-items: center;
+    -webkit-align-items: center;
     align-content: center;
+    -webkit-align-content: center;
 }
 
 .add-to-cart__custom span {
@@ -2053,6 +2071,7 @@ ul.woocommerce-error {
 
 .cart-wrapper .product-remove {
     display: flex;
+    display: -webkit-flex;
 }
 
 .cart-wrapper .product-remove a,
@@ -2356,6 +2375,13 @@ ul.wc_payment_methods label {
 .woocommerce-info,
 .woocommerce-form-login {
     width: 77%;
+}
+
+@media screen and (max-width: 1023px) {
+    .woocommerce-info,
+    .woocommerce-form-login {
+        width: 100%;
+    }
 }
 
 .woocommerce-form-login a,
