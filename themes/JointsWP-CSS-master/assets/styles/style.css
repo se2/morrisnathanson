@@ -1915,6 +1915,32 @@ ul.products {
     color: #1675a9;
 }
 
+.single-product .woocommerce-message,
+.single-product .woocommerce-error {
+    position: absolute;
+}
+
+.single-product .woocommerce-message {
+    top: 225px;
+}
+
+.single-product .woocommerce-error {
+    top: 200px;
+}
+
+@media screen and (max-width: 767px) {
+    .single-product .woocommerce-message,
+    .single-product .woocommerce-error {
+        position: relative;
+        top: auto;
+        padding-top: 75px;
+        margin-bottom: -4.125rem;
+    }
+    .woocommerce-error .button.wc-forward {
+        display: none;
+    }
+}
+
 .woocommerce-message .button {
     display: none;
 }
